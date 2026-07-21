@@ -6,7 +6,7 @@ Current release package: `v3.0.0`
 
 Release page:
 
-https://github.com/Bhanunamikaze/Agentic-SEO-Skill/releases/tag/v3.0.0
+https://github.com/T4wroot/agentic-seo/releases/tag/v3.0.0
 
 ## IDE Targets
 
@@ -36,43 +36,43 @@ Use `--online` for normal installs. With no `--target`, online mode installs to 
 Install every target:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh | bash -s -- --online
+curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online
 ```
 
 Claude only:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh | bash -s -- --online --target claude
+curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online --target claude
 ```
 
 Codex only:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh | bash -s -- --online --target codex
+curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online --target codex
 ```
 
 User-wide Claude plus Codex:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh | bash -s -- --online --target global
+curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online --target global
 ```
 
 All project-local targets:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh | bash -s -- --online --target project --project-dir /path/to/your/project
+curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online --target project --project-dir /path/to/your/project
 ```
 
 Everything, including global and project-local targets:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh | bash -s -- --online --target all --project-dir /path/to/your/project
+curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online --target all --project-dir /path/to/your/project
 ```
 
 Pin a specific release tag:
 
 ```bash
-curl -fsSLO https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh
+curl -fsSLO https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh
 bash install.sh --online --ref v3.0.0 --target codex --force
 ```
 
@@ -81,7 +81,7 @@ bash install.sh --online --ref v3.0.0 --target codex --force
 Download the installer:
 
 ```powershell
-iwr https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.ps1 -OutFile install.ps1
+iwr https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.ps1 -OutFile install.ps1
 ```
 
 Install every target:
@@ -119,8 +119,8 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1 --online --ref v3.0.0 --t
 Use source installs when developing the skill or testing unreleased changes.
 
 ```bash
-git clone https://github.com/Bhanunamikaze/Agentic-SEO-Skill.git
-cd Agentic-SEO-Skill
+git clone https://github.com/T4wroot/agentic-seo.git
+cd agentic-seo
 ```
 
 Claude:
@@ -194,7 +194,7 @@ bash install.sh --target all --project-dir /path/to/your/project
 If you want to inspect the installer before running it:
 
 ```bash
-curl -fsSLO https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh
+curl -fsSLO https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh
 less install.sh
 bash install.sh --online --target codex
 ```
@@ -202,7 +202,7 @@ bash install.sh --online --target codex
 PowerShell equivalent:
 
 ```powershell
-iwr https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.ps1 -OutFile install.ps1
+iwr https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.ps1 -OutFile install.ps1
 notepad install.ps1
 powershell -ExecutionPolicy Bypass -File .\install.ps1 --online --target codex
 ```

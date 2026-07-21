@@ -4,12 +4,12 @@
 
 Current release: `v3.0.0`
 
-https://github.com/Bhanunamikaze/Agentic-SEO-Skill/releases/tag/v3.0.0
+https://github.com/T4wroot/agentic-seo/releases/tag/v3.0.0
 
 Published assets:
 
-- `Agentic-SEO-Skill-v3.0.0.zip`
-- `Agentic-SEO-Skill-v3.0.0.tar.gz`
+- `agentic-seo-v3.0.0.zip`
+- `agentic-seo-v3.0.0.tar.gz`
 
 ## Tag-Based Packaging
 

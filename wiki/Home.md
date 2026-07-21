@@ -29,7 +29,7 @@ Agentic SEO Skill is an LLM-first SEO audit toolkit for agent IDEs and AI coding
 ### 1. Install for Codex
 
 ```bash
-curl -fsSLO https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh
+curl -fsSLO https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh
 bash install.sh --online --ref v3.0.0 --target codex --force
 ```
 
@@ -57,7 +57,7 @@ python3 ~/.codex/skills/seo/scripts/generate_report.py "https://example.com" --o
 
 Example dashboard snapshot:
 
-![SEO report dashboard example](https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/docs/images/report-dashboard.png)
+![SEO report dashboard example](https://raw.githubusercontent.com/T4wroot/agentic-seo/main/docs/images/report-dashboard.png)
 
 ## Choose the Right Workflow
 

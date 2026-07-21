@@ -2,8 +2,8 @@
 
 $ErrorActionPreference = 'Stop'
 
-$REPO_URL        = if ($env:REPO_URL) { $env:REPO_URL } else { 'https://github.com/Bhanunamikaze/Agentic-SEO-Skill.git' }
-$GITHUB_REPO     = if ($env:GITHUB_REPO) { $env:GITHUB_REPO } else { 'Bhanunamikaze/Agentic-SEO-Skill' }
+$REPO_URL        = if ($env:REPO_URL) { $env:REPO_URL } else { 'https://github.com/T4wroot/agentic-seo.git' }
+$GITHUB_REPO     = if ($env:GITHUB_REPO) { $env:GITHUB_REPO } else { 'T4wroot/agentic-seo' }
 $GITHUB_REF      = if ($env:GITHUB_REF)  { $env:GITHUB_REF }  else { 'main' }
 $SKILL_NAME      = 'seo'
 $TARGET          = 'claude'
@@ -18,7 +18,7 @@ $SOURCE_MODE     = 'auto'
 $REPO_PATH       = ''
 $TEMP_DIR        = $null
 
-# docs/ and tests/ are intentionally excluded — docs/ only holds README
+# docs/ and tests/ are intentionally excluded â€” docs/ only holds README
 # screenshots, and tests/ is for repository CI rather than installed skills.
 $REQUIRED_PATHS  = @('SKILL.md', 'scripts', 'resources')
 
@@ -63,7 +63,7 @@ Activate whenever the user asks to:
 
 Apply the rubric in `resources/references/llm-audit-rubric.md`:
 1. Collect page evidence (`read_url_content` first; bundled scripts as needed).
-2. Reason from explicit proof — every finding cites evidence.
+2. Reason from explicit proof â€” every finding cites evidence.
 3. Label confidence: Confirmed / Likely / Hypothesis.
 4. Prioritise by impact and effort.
 5. Produce a structured action plan (FULL-AUDIT-REPORT.md + ACTION-PLAN.md).
@@ -215,7 +215,7 @@ function Test-IsExcluded {
     return $false
 }
 
-# ── Skills-directory copy (Claude / Codex / Antigravity / Cowork) ────────────
+# â”€â”€ Skills-directory copy (Claude / Codex / Antigravity / Cowork) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function Copy-Skill {
     param(
@@ -278,7 +278,7 @@ function Copy-Skill {
     Write-Host "  Installed for ${Label}: $Dest"
 }
 
-# ── Root resolution helpers ───────────────────────────────────────────────────
+# â”€â”€ Root resolution helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function Get-GlobalRootForTool {
     param([Parameter(Mandatory = $true)][string]$Tool)
@@ -345,9 +345,9 @@ function Install-ToolGlobal {
     Copy-Skill -Src $Src -Dest $dest -Label "${Tool}-global"
 }
 
-# ── IDE-native format installers ─────────────────────────────────────────────
+# â”€â”€ IDE-native format installers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-# Cursor — .cursor\rules\seo.mdc  (MDC frontmatter format)
+# Cursor â€” .cursor\rules\seo.mdc  (MDC frontmatter format)
 function Install-Cursor {
     param([Parameter(Mandatory = $true)][string]$Src)
     $rulesDir = Join-Path $PROJECT_DIR '.cursor/rules'
@@ -374,7 +374,7 @@ alwaysApply: false
     try { Copy-Skill -Src $Src -Dest $dest -Label 'Cursor (.cursor/skills/)' } catch { Write-Warning "Skipped skill copy: $_" }
 }
 
-# Windsurf — .windsurf\rules\seo.md
+# Windsurf â€” .windsurf\rules\seo.md
 function Install-Windsurf {
     param([Parameter(Mandatory = $true)][string]$Src)
     $rulesDir  = Join-Path $PROJECT_DIR '.windsurf/rules'
@@ -393,7 +393,7 @@ function Install-Windsurf {
     try { Copy-Skill -Src $Src -Dest $dest -Label 'Windsurf (.windsurf/skills/)' } catch { Write-Warning "Skipped skill copy: $_" }
 }
 
-# Continue.dev — .continue\prompts\seo.prompt
+# Continue.dev â€” .continue\prompts\seo.prompt
 function Install-Continue {
     param([Parameter(Mandatory = $true)][string]$Src)
     $promptsDir = Join-Path $PROJECT_DIR '.continue/prompts'
@@ -430,7 +430,7 @@ Read SKILL.md for the complete multi-phase workflow.
     try { Copy-Skill -Src $Src -Dest $dest -Label 'Continue.dev (.continue/skills/)' } catch { Write-Warning "Skipped skill copy: $_" }
 }
 
-# GitHub Copilot — .github\copilot-instructions.md
+# GitHub Copilot â€” .github\copilot-instructions.md
 function Install-Copilot {
     param([Parameter(Mandatory = $true)][string]$Src)
     $githubDir       = Join-Path $PROJECT_DIR '.github'
@@ -456,7 +456,7 @@ function Install-Copilot {
     try { Copy-Skill -Src $Src -Dest $dest -Label 'GitHub Copilot (.github/skills/)' } catch { Write-Warning "Skipped skill copy: $_" }
 }
 
-# Claude Cowork — packages the skill as a .plugin file (zip) for import via Cowork UI
+# Claude Cowork â€” packages the skill as a .plugin file (zip) for import via Cowork UI
 # Structure: .claude-plugin\plugin.json  +  skills\<name>\  (not .claude\skills\)
 function Install-Cowork {
     param([Parameter(Mandatory = $true)][string]$Src)
@@ -499,7 +499,7 @@ function Install-Cowork {
     Write-Host "    3. Select: $pluginFile"
 }
 
-# Cline — .clinerules
+# Cline â€” .clinerules
 function Install-Cline {
     param([Parameter(Mandatory = $true)][string]$Src)
     $rulesFile = Join-Path $PROJECT_DIR '.clinerules'
@@ -526,7 +526,7 @@ function Install-Cline {
     try { Copy-Skill -Src $Src -Dest $dest -Label 'Cline (.cline/skills/)' } catch { Write-Warning "Skipped skill copy: $_" }
 }
 
-# ── Argument parsing ──────────────────────────────────────────────────────────
+# â”€â”€ Argument parsing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 $idx = 0
 while ($idx -lt $args.Count) {
@@ -588,7 +588,7 @@ $SCRIPT_DIR  = if ($PSScriptRoot) { $PSScriptRoot } else { (Get-Location).Path }
 $SRC_DIR     = ''
 $SHOULD_CLONE = $false
 
-# ── Source resolution ─────────────────────────────────────────────────────────
+# â”€â”€ Source resolution â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 if ($ONLINE_MODE) {
     $TEMP_DIR    = Join-Path ([System.IO.Path]::GetTempPath()) ([System.Guid]::NewGuid().ToString('N'))
@@ -610,7 +610,7 @@ if ($ONLINE_MODE) {
         $latestTag = $releaseInfo.tag_name
         if (-not [string]::IsNullOrWhiteSpace($latestTag)) {
             Write-Host "  Latest release: $latestTag"
-            # Expand-Archive only handles .zip — never pick a .tar.gz asset
+            # Expand-Archive only handles .zip â€” never pick a .tar.gz asset
             # here even if one is listed first by the API.
             $asset = $releaseInfo.assets |
                 Where-Object { $_.name -match '\.zip$' } |
@@ -626,7 +626,7 @@ if ($ONLINE_MODE) {
         }
     }
     catch {
-        # API call failed — fall through to branch archive below.
+        # API call failed â€” fall through to branch archive below.
     }
     if (-not $downloadUrl) {
         $downloadUrl  = "https://github.com/$GITHUB_REPO/archive/refs/heads/$GITHUB_REF.zip"
@@ -635,7 +635,7 @@ if ($ONLINE_MODE) {
     Write-Host "  Downloading $downloadDesc..."
     Invoke-WebRequest -Uri $downloadUrl -OutFile $zipPath -ErrorAction Stop
 
-    # Expand-Archive's default error action is Continue on PS 5.1 — make it
+    # Expand-Archive's default error action is Continue on PS 5.1 â€” make it
     # fatal so a bad download surfaces here, not as "SKILL.md not found".
     Expand-Archive -Path $zipPath -DestinationPath $extractRoot -Force -ErrorAction Stop
     Remove-Item -Path $zipPath -Force
@@ -699,7 +699,7 @@ try {
         Write-Host "  using git:   $gitExe"
         Write-Host "  destination: $cloneDir"
 
-        # Direct invocation — git's stdout/stderr stream through to the user.
+        # Direct invocation â€” git's stdout/stderr stream through to the user.
         # No wrapper function (would otherwise capture stdout into a variable
         # and leave the user wondering whether git actually ran).
         & $gitExe clone --depth 1 $REPO_URL $cloneDir
@@ -736,7 +736,7 @@ try {
     Write-Host "Skill name: $SKILL_NAME"
     Write-Host ''
 
-    # ── Install per target ────────────────────────────────────────────────────
+    # â”€â”€ Install per target â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     switch ($TARGET) {
         'claude'      { Install-ToolAuto  -Src $SRC_DIR -Tool 'claude'      -SkillName $SKILL_NAME }
@@ -774,7 +774,7 @@ try {
         }
     }
 
-    # ── Python dependencies ───────────────────────────────────────────────────
+    # â”€â”€ Python dependencies â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     if ($INSTALL_DEPS) {
         Write-Host ''

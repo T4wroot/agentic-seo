@@ -69,7 +69,7 @@ The HTML dashboard includes:
 
 Dashboard snapshot from `docs/images/report-dashboard.png`:
 
-![SEO report dashboard example](https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/docs/images/report-dashboard.png)
+![SEO report dashboard example](https://raw.githubusercontent.com/T4wroot/agentic-seo/main/docs/images/report-dashboard.png)
 
 Use the dashboard for:
 

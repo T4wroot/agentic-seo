@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-REPO_URL="${REPO_URL:-https://github.com/Bhanunamikaze/Agentic-SEO-Skill.git}"
-GITHUB_REPO="${GITHUB_REPO:-Bhanunamikaze/Agentic-SEO-Skill}"
+REPO_URL="${REPO_URL:-https://github.com/T4wroot/agentic-seo.git}"
+GITHUB_REPO="${GITHUB_REPO:-T4wroot/agentic-seo}"
 GITHUB_REF="${GITHUB_REF:-main}"
 SKILL_NAME="seo"
 TARGET="claude"
@@ -19,7 +19,7 @@ REPO_PATH=""
 TEMP_DIR=""
 
 # Payload paths copied into each install destination.
-# docs/ and tests/ are intentionally excluded — docs/ only holds README
+# docs/ and tests/ are intentionally excluded â€” docs/ only holds README
 # screenshots, and tests/ is for repository CI rather than installed skills.
 REQUIRED_PATHS=(
     "SKILL.md"
@@ -84,7 +84,7 @@ Examples:
   bash install.sh --online --ref develop
 
 Safer remote install:
-  curl -fsSLO https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh
+  curl -fsSLO https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh
   bash install.sh --target claude
 EOF
 }
@@ -114,7 +114,7 @@ resolve_dir() {
     (cd "${dir}" && pwd)
 }
 
-# ── Skills-directory copy (Claude / Codex / Antigravity / Cowork) ────────────
+# â”€â”€ Skills-directory copy (Claude / Codex / Antigravity / Cowork) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 copy_skill() {
     local src="$1"
@@ -187,7 +187,7 @@ copy_skill() {
     echo "  Installed for ${label}: ${dest}"
 }
 
-# ── Root resolution helpers ───────────────────────────────────────────────────
+# â”€â”€ Root resolution helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 global_root_for_tool() {
     local tool="$1"
@@ -243,7 +243,7 @@ install_tool_global() {
     copy_skill "${SRC_DIR}" "${global_root}/skills/${SKILL_NAME}" "${tool}-global"
 }
 
-# ── IDE-native format installers ─────────────────────────────────────────────
+# â”€â”€ IDE-native format installers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 # Shared invocation summary written into IDE-specific rule / prompt files.
 _skill_invocation_text() {
@@ -287,7 +287,7 @@ Activate whenever the user asks to:
 
 Apply the rubric in `resources/references/llm-audit-rubric.md`:
 1. Collect page evidence (`read_url_content` first; bundled scripts as needed).
-2. Reason from explicit proof — every finding cites evidence.
+2. Reason from explicit proof â€” every finding cites evidence.
 3. Label confidence: Confirmed / Likely / Hypothesis.
 4. Prioritise by impact and effort.
 5. Produce a structured action plan (`FULL-AUDIT-REPORT.md` + `ACTION-PLAN.md`).
@@ -296,7 +296,7 @@ Read **SKILL.md** for the full multi-phase workflow.
 SKILL_CONTENT
 }
 
-# Cursor — .cursor/rules/seo.mdc  (MDC frontmatter format)
+# Cursor â€” .cursor/rules/seo.mdc  (MDC frontmatter format)
 install_cursor() {
     local rules_dir="${PROJECT_DIR}/.cursor/rules"
     local mdc_file="${rules_dir}/seo.mdc"
@@ -324,7 +324,7 @@ MDC_HEADER
     copy_skill "${SRC_DIR}" "${PROJECT_DIR}/.cursor/skills/${SKILL_NAME}" "Cursor (.cursor/skills/)" || true
 }
 
-# Windsurf — .windsurf/rules/seo.md
+# Windsurf â€” .windsurf/rules/seo.md
 install_windsurf() {
     local rules_dir="${PROJECT_DIR}/.windsurf/rules"
     local rule_file="${rules_dir}/seo.md"
@@ -342,7 +342,7 @@ install_windsurf() {
     copy_skill "${SRC_DIR}" "${PROJECT_DIR}/.windsurf/skills/${SKILL_NAME}" "Windsurf (.windsurf/skills/)" || true
 }
 
-# Continue.dev — .continue/prompts/seo.prompt  (slash command format)
+# Continue.dev â€” .continue/prompts/seo.prompt  (slash command format)
 install_continue() {
     local prompts_dir="${PROJECT_DIR}/.continue/prompts"
     local prompt_file="${prompts_dir}/seo.prompt"
@@ -378,7 +378,7 @@ PROMPT_FILE
     copy_skill "${SRC_DIR}" "${PROJECT_DIR}/.continue/skills/${SKILL_NAME}" "Continue.dev (.continue/skills/)" || true
 }
 
-# GitHub Copilot — .github/copilot-instructions.md
+# GitHub Copilot â€” .github/copilot-instructions.md
 install_copilot() {
     local github_dir="${PROJECT_DIR}/.github"
     local instructions_file="${github_dir}/copilot-instructions.md"
@@ -405,7 +405,7 @@ install_copilot() {
     copy_skill "${SRC_DIR}" "${github_dir}/skills/${SKILL_NAME}" "GitHub Copilot (.github/skills/)" || true
 }
 
-# Claude Cowork — packages the skill as a .plugin file (zip) for import via Cowork UI
+# Claude Cowork â€” packages the skill as a .plugin file (zip) for import via Cowork UI
 # Structure: .claude-plugin/plugin.json  +  skills/<name>/  (no flat .claude/skills/ copy)
 install_cowork() {
     local plugin_file="${PROJECT_DIR}/${SKILL_NAME}.plugin"
@@ -425,7 +425,7 @@ install_cowork() {
     mkdir -p "${build_dir}/.claude-plugin"
     mkdir -p "${build_dir}/skills/${SKILL_NAME}"
 
-    # Manifest — .claude-plugin/plugin.json (NOT plugin.json at root)
+    # Manifest â€” .claude-plugin/plugin.json (NOT plugin.json at root)
     cat > "${build_dir}/.claude-plugin/plugin.json" <<EOF
 {
   "name": "${SKILL_NAME}",
@@ -465,12 +465,12 @@ PYEOF
     echo "  Created Cowork plugin: ${plugin_file}"
     echo ""
     echo "  To install in Cowork:"
-    echo "    1. Open claude.ai → Cowork"
-    echo "    2. Go to Customize → Plugins → Install from file"
+    echo "    1. Open claude.ai â†’ Cowork"
+    echo "    2. Go to Customize â†’ Plugins â†’ Install from file"
     echo "    3. Select: ${plugin_file}"
 }
 
-# Cline — .clinerules  (project-level instruction file)
+# Cline â€” .clinerules  (project-level instruction file)
 install_cline() {
     local rules_file="${PROJECT_DIR}/.clinerules"
     local marker="<!-- agentic-seo-skill -->"
@@ -499,7 +499,7 @@ open('${rules_file}', 'w').write(text)
     copy_skill "${SRC_DIR}" "${PROJECT_DIR}/.cline/skills/${SKILL_NAME}" "Cline (.cline/skills/)" || true
 }
 
-# ── Argument parsing ──────────────────────────────────────────────────────────
+# â”€â”€ Argument parsing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -543,7 +543,7 @@ SCRIPT_DIR="$(cd "$(dirname "${SCRIPT_PATH}")" && pwd)"
 SRC_DIR=""
 SHOULD_CLONE=0
 
-# ── Source resolution ─────────────────────────────────────────────────────────
+# â”€â”€ Source resolution â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 if [[ "${ONLINE_MODE}" -eq 1 ]]; then
     require_cmd curl
@@ -656,7 +656,7 @@ echo "Target:     ${TARGET}"
 echo "Skill name: ${SKILL_NAME}"
 echo ""
 
-# ── Install per target ────────────────────────────────────────────────────────
+# â”€â”€ Install per target â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 case "${TARGET}" in
     claude)      install_tool_auto "claude" ;;
@@ -694,7 +694,7 @@ case "${TARGET}" in
         ;;
 esac
 
-# ── Python dependencies ───────────────────────────────────────────────────────
+# â”€â”€ Python dependencies â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 if [[ "${INSTALL_DEPS}" -eq 1 ]]; then
     echo ""

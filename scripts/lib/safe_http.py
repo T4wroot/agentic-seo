@@ -15,7 +15,7 @@ except ImportError as exc:  # pragma: no cover - import-time environment guard
 
 AGENTIC_SEO_USER_AGENT = (
     "Mozilla/5.0 (compatible; AgenticSEOSkill/1.0; "
-    "+https://github.com/Bhanunamikaze/Agentic-SEO-Skill)"
+    "+https://github.com/T4wroot/agentic-seo)"
 )
 DEFAULT_TIMEOUT = 15
 DEFAULT_MAX_REDIRECTS = 5

@@ -1,29 +1,29 @@
 <div align="center">
 
-# 🤖 Agentic SEO Skill
+# ðŸ¤– Agentic SEO Skill
 
-**[🇮🇷 فارسی (Persian)](README.fa.md) | [🇺🇸 English](README.md)**
+**[ðŸ‡®ðŸ‡· ÙØ§Ø±Ø³ÛŒ (Persian)](README.fa.md) | [ðŸ‡ºðŸ‡¸ English](README.md)**
 
 [![Release](https://img.shields.io/github/v/release/T4wroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/T4wroot/agentic-seo/releases)
 [![GitHub Pages](https://img.shields.io/github/actions/workflow/status/T4wroot/agentic-seo/deploy-pages.yml?branch=master&label=Live%20Site&style=for-the-badge&color=success)](https://T4wroot.github.io/agentic-seo)
 [![Python](https://img.shields.io/badge/Python-91%25-yellow?style=for-the-badge&logo=python)](https://github.com/T4wroot/agentic-seo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-> **The Ultimate, 3-in-1 SEO Skill for AI Agents** 🚀
+> **The Ultimate, 3-in-1 SEO Skill for AI Agents** ðŸš€
 </div>
 
 This repository merges three massive projects into one:
-1. 📝 **Native Markdown Skills**: 160+ native markdown skills for IDEs (Cursor/Claude).
-2. 🐍 **Advanced Python Ecosystem**: 89 python scripts, 10 specialist agents, multi-IDE installers.
-3. ✨ **Interactive UI**: A glowing, OLED Glassmorphism [Live Dashboard](https://T4wroot.github.io/agentic-seo).
+1. ðŸ“ **Native Markdown Skills**: 160+ native markdown skills for IDEs (Cursor/Claude).
+2. ðŸ **Advanced Python Ecosystem**: 89 python scripts, 10 specialist agents, multi-IDE installers.
+3. âœ¨ **Interactive UI**: A glowing, OLED Glassmorphism [Live Dashboard](https://T4wroot.github.io/agentic-seo).
 
 An LLM-first SEO analysis skill for agent IDEs and AI coding assistants, with 16 specialized sub-skills, 10 specialist agents, and 89 scripts used as evidence collectors and workflow automation.
 
 For detailed installation guidance, example prompts, report generation, troubleshooting, and the full script inventory, see the **[Agentic SEO Skill Wiki](https://github.com/T4wroot/agentic-seo/wiki)**.
 
-## 💻 IDE Compatibility
+## ðŸ’» IDE Compatibility
 
-The installer ships native formats for each tool — not just a generic copy:
+The installer ships native formats for each tool â€” not just a generic copy:
 
 | Tool | Install location | Native format |
 |---|---|---|
@@ -37,7 +37,7 @@ The installer ships native formats for each tool — not just a generic copy:
 | GitHub Copilot | `<project>/.github/copilot-instructions.md` + `.github/skills/seo/` | Repo instructions |
 | Cline | `<project>/.clinerules` + `.cline/skills/seo/` | Project rules |
 
-## 📦 Current Inventory
+## ðŸ“¦ Current Inventory
 
 - Specialized sub-skills: `16`
 - Specialist agents: `10`
@@ -52,7 +52,7 @@ python3 scripts/reference_freshness.py resources/references --max-age-days 90
 
 ### Key Script Inventory
 
-The README only highlights the scripts most users reach for first. See the full 89-script list with purpose notes in the [Script Inventory wiki](https://github.com/Bhanunamikaze/Agentic-SEO-Skill/wiki/Script-Inventory).
+The README only highlights the scripts most users reach for first. See the full 89-script list with purpose notes in the [Script Inventory wiki](https://github.com/T4wroot/agentic-seo/wiki/Script-Inventory).
 
 | Script | Best for |
 |---|---|
@@ -70,12 +70,12 @@ The README only highlights the scripts most users reach for first. See the full 
 | `github_seo_report.py` | GitHub repository SEO report and action plan generation. |
 | `finding_verifier.py` | Deduplicate, prioritize, and validate findings before final reporting. |
 
-## 🐙 GitHub SEO Metadata
+## ðŸ™ GitHub SEO Metadata
 
 Recommended GitHub repository description (About field):
 
 ```text
-LLM-first SEO skill for Claude Code, Codex, Antigravity, Cursor, Windsurf, Continue, Copilot, and Cline — 16 sub-skills, 10 specialist agents, and GitHub SEO workflows that output GITHUB-SEO-REPORT.md and GITHUB-ACTION-PLAN.md.
+LLM-first SEO skill for Claude Code, Codex, Antigravity, Cursor, Windsurf, Continue, Copilot, and Cline â€” 16 sub-skills, 10 specialist agents, and GitHub SEO workflows that output GITHUB-SEO-REPORT.md and GITHUB-ACTION-PLAN.md.
 ```
 
 Suggested GitHub topics:
@@ -85,7 +85,7 @@ seo, llm, github-seo, ai-search, geo, aeo, technical-seo, schema, core-web-vital
 ```
 
 
-## ✨ Features
+## âœ¨ Features
 
 | Sub-Skill | Description |
 |-----------|-------------|
@@ -97,16 +97,16 @@ seo, llm, github-seo, ai-search, geo, aeo, technical-seo, schema, core-web-vital
 | [seo schema](resources/skills/seo-schema.md) | Schema.org detection, validation & JSON-LD generation |
 | [seo sitemap](resources/skills/seo-sitemap.md) | XML sitemap analysis & generation |
 | [seo images](resources/skills/seo-images.md) | Image optimization audit (alt text, formats, lazy loading, CLS) |
-| [seo geo](resources/skills/seo-geo.md) | Generative Engine Optimization — AI Overviews, ChatGPT, Perplexity |
-| [seo aeo](resources/skills/seo-aeo.md) | Answer Engine Optimization — Featured Snippets, PAA, Knowledge Panel |
-| [seo links](resources/skills/seo-links.md) | Link profile analysis — internal links, backlinks, anchor text, orphan pages |
+| [seo geo](resources/skills/seo-geo.md) | Generative Engine Optimization â€” AI Overviews, ChatGPT, Perplexity |
+| [seo aeo](resources/skills/seo-aeo.md) | Answer Engine Optimization â€” Featured Snippets, PAA, Knowledge Panel |
+| [seo links](resources/skills/seo-links.md) | Link profile analysis â€” internal links, backlinks, anchor text, orphan pages |
 | [seo programmatic](resources/skills/seo-programmatic.md) | Programmatic SEO safeguards & quality gates |
 | [seo competitors](resources/skills/seo-competitor-pages.md) | Comparison & alternatives page generation |
 | [seo hreflang](resources/skills/seo-hreflang.md) | International SEO / hreflang validation |
 | [seo plan](resources/skills/seo-plan.md) | Strategic SEO planning with topical clusters & industry templates |
 | [seo github](resources/skills/seo-github.md) | GitHub repository SEO: metadata/topics, README quality, community profile, query benchmarking, traffic archiving |
 
-## 🧠 LLM-First Workflow
+## ðŸ§  LLM-First Workflow
 
 This skill is designed for reasoning-first SEO analysis:
 
@@ -127,37 +127,37 @@ The rubric standardizes:
 - confidence labeling
 - output contract for audit reports
 
-## 🤖 Specialist Agents
+## ðŸ¤– Specialist Agents
 
-- **Technical SEO** — crawlability, indexability, security, mobile, JS rendering
-- **Content Quality** — E-E-A-T scoring, AI content detection
-- **Performance** — Core Web Vitals (LCP, INP, CLS) analysis
-- **Schema Markup** — JSON-LD detection, validation, generation
-- **Sitemap** — XML sitemap validation, quality gates
-- **Visual Analysis** — screenshots, above-the-fold, responsiveness (Playwright)
-- **GitHub Analyst** — metadata, topics, README, trust, title strategy
-- **GitHub Benchmark** — query ranking and competitor intelligence
-- **GitHub Data** — API/auth fallback and traffic archival continuity
-- **Verifier (Global)** — dedupe/contradiction suppression before final reporting
+- **Technical SEO** â€” crawlability, indexability, security, mobile, JS rendering
+- **Content Quality** â€” E-E-A-T scoring, AI content detection
+- **Performance** â€” Core Web Vitals (LCP, INP, CLS) analysis
+- **Schema Markup** â€” JSON-LD detection, validation, generation
+- **Sitemap** â€” XML sitemap validation, quality gates
+- **Visual Analysis** â€” screenshots, above-the-fold, responsiveness (Playwright)
+- **GitHub Analyst** â€” metadata, topics, README, trust, title strategy
+- **GitHub Benchmark** â€” query ranking and competitor intelligence
+- **GitHub Data** â€” API/auth fallback and traffic archival continuity
+- **Verifier (Global)** â€” dedupe/contradiction suppression before final reporting
 
-## 📚 Reference Data
+## ðŸ“š Reference Data
 
 - Core Web Vitals thresholds (INP replaced FID)
 - E-E-A-T framework (Sept 2025 QRG + Dec 2025 core update)
-- Schema.org types — active, restricted, deprecated
+- Schema.org types â€” active, restricted, deprecated
 - Content quality gates & word count minimums
 - Google SEO quick reference
 - LLM audit rubric for consistent outputs
 
 Each reference file carries its own `<!-- Updated: YYYY-MM-DD -->` marker. CI checks those markers with `scripts/reference_freshness.py` and flags stale references for review.
 
-## 🏭 Industry Templates
+## ðŸ­ Industry Templates
 
 Pre-built strategy templates for: **SaaS**, **E-commerce**, **Local Business**, **Publisher/Media**, **Agency**, and **Generic** businesses.
 
 ---
 
-## 🔧 Installation
+## ðŸ”§ Installation
 
 All `--online` commands below download the latest release package from GitHub automatically. With no `--target`, `--online` installs to every supported IDE.
 
@@ -166,22 +166,22 @@ All `--online` commands below download the latest release package from GitHub au
 **Linux / macOS:**
 ```bash
 # Default: installs to every target at once
-curl -fsSL https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh | bash -s -- --online
+curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online
 
 # Claude Code only
-curl -fsSL https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh | bash -s -- --online --target claude
+curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online --target claude
 
 # User-wide (Claude + Codex)
-curl -fsSL https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh | bash -s -- --online --target global
+curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online --target global
 
 # Every target, scoped to a project
-curl -fsSL https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh | bash -s -- --online --target all --project-dir /path/to/your/project
+curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online --target all --project-dir /path/to/your/project
 ```
 
 **Windows (PowerShell 7+):**
 ```powershell
 # Download installer, then run with --online
-irm https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.ps1 -OutFile install.ps1
+irm https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.ps1 -OutFile install.ps1
 
 # Default: installs to every target at once
 powershell -ExecutionPolicy Bypass -File .\install.ps1 --online
@@ -196,8 +196,8 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1 --online --target all --p
 ### From source
 
 ```bash
-git clone https://github.com/Bhanunamikaze/Agentic-SEO-Skill.git
-cd Agentic-SEO-Skill
+git clone https://github.com/T4wroot/agentic-seo.git
+cd agentic-seo
 
 # Claude Code (most common)
 bash install.sh --target claude
@@ -239,7 +239,7 @@ bash install.sh --target all --project-dir /path/to/your/project
 bash install.sh --target claude --install-deps --install-playwright
 ```
 
-**Windows (PowerShell) — from source:**
+**Windows (PowerShell) â€” from source:**
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\install.ps1 --target claude
 powershell -ExecutionPolicy Bypass -File .\install.ps1 --target cursor --project-dir C:\path\to\project
@@ -248,7 +248,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1 --target all --project-di
 
 **Safer remote install (download, inspect, run):**
 ```bash
-curl -fsSLO https://raw.githubusercontent.com/Bhanunamikaze/Agentic-SEO-Skill/main/install.sh
+curl -fsSLO https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh
 less install.sh                  # review before running
 bash install.sh --online
 ```
@@ -264,11 +264,11 @@ bash install.sh --online
 | `--ref <branch-or-tag>` | `main` | Branch or tag to use in `--online` mode. |
 | `--repo-url <url>` | upstream | Override the source repo for remote clone. |
 | `--source <auto\|local\|remote>` | `auto` | Force the source resolution mode. |
-| `--repo-path <path>` | — | Use a specific local checkout as the install source. |
+| `--repo-path <path>` | â€” | Use a specific local checkout as the install source. |
 | `--install-deps` | off | Also `pip install --user requests beautifulsoup4`. |
 | `--install-playwright` | off | Also install Playwright + Chromium (for visual analysis). |
 | `--force` | off | Overwrite an existing installed skill. (`--online` implies `--force`.) |
-| `-h`, `--help` | — | Show the full usage block. |
+| `-h`, `--help` | â€” | Show the full usage block. |
 
 ### Python dependencies (manual)
 
@@ -276,7 +276,7 @@ If you skipped `--install-deps`:
 
 ```bash
 pip install requests beautifulsoup4
-# Optional — for visual analysis (screenshots & layout checks):
+# Optional â€” for visual analysis (screenshots & layout checks):
 pip install playwright && playwright install chromium
 ```
 
@@ -292,9 +292,9 @@ The skill will auto-trigger when you mention SEO-related keywords in your IDE. T
 
 ---
 
-## 💬 Example Prompts (hackingdream.net)
+## ðŸ’¬ Example Prompts (hackingdream.net)
 
-For expanded copy-paste prompt templates across full audits, technical SEO, schema, content, GEO/AEO, local SEO, ecommerce, and GitHub SEO, see the [Example Prompts wiki](https://github.com/Bhanunamikaze/Agentic-SEO-Skill/wiki/Example-Prompts).
+For expanded copy-paste prompt templates across full audits, technical SEO, schema, content, GEO/AEO, local SEO, ecommerce, and GitHub SEO, see the [Example Prompts wiki](https://github.com/T4wroot/agentic-seo/wiki/Example-Prompts).
 
 ### How Prompts Route to Agents & Scripts
 
@@ -307,27 +307,27 @@ Here's how specific phrases map to the skill's capabilities:
 
 | You type... | Scope | Agent(s) activated | Scripts used |
 |-------------|-------|-------------------|--------------|
-| "Run SEO audit" | 🌐 Full domain | **All 6 core website agents** (technical, content, schema, performance, sitemap, visual) | `audit_runner.py`, `crawl_audit.py`, `parse_html.py`, `pagespeed.py`, `robots_checker.py`, `security_headers.py`, `broken_links.py`, `readability.py` |
-| "Analyze this article" / blog post URL | 📄 Single page | **Content** + **Schema** + **Technical** | `article_seo.py`, `parse_html.py`, `readability.py` |
-| "Check technical SEO" | 🔧 Technical only | **Technical** | `robots_checker.py`, `security_headers.py`, `redirect_checker.py`, `parse_html.py` |
-| "Review content quality" / "E-E-A-T" | 📝 Content only | **Content** | `article_seo.py`, `readability.py`, `entity_checker.py` |
-| "Check schema markup" | 🏷️ Schema only | **Schema** | `parse_html.py`, `validate_schema.py` |
-| "Audit sitemap" | 🗺️ Sitemap only | **Sitemap** | `sitemap_checker.py`, `sitemap_generator.py` |
-| "Check page speed" / "Core Web Vitals" | ⚡ Performance only | **Performance** | `pagespeed.py` |
-| "Take screenshots" / "mobile check" | 📱 Visual only | **Visual** | `capture_screenshot.py`, `analyze_visual.py` |
-| "Check GEO readiness" / "AI search" | 🤖 GEO/AI only | **Technical** + **Content** | `llms_txt_checker.py`, `robots_checker.py`, `parse_html.py` |
-| "Analyze links" / "backlink profile" | 🔗 Links only | **Technical** | `link_profile.py`, `internal_links.py`, `broken_links.py` |
-| "Check hreflang" | 🌍 i18n only | **Technical** | `hreflang_checker.py` |
-| "Create SEO plan" / "SEO strategy" | 📋 Strategy | None (LLM reasoning) | `competitor_gap.py` (optional) |
-| "AEO analysis" / "Featured Snippets" | 🎯 AEO only | **Content** | `article_seo.py`, `parse_html.py` |
-| "Entity SEO" / "Knowledge Graph" | 🏛️ Entity only | **Content** + **Schema** | `entity_checker.py`, `parse_html.py` |
-| "Check IndexNow" | 📡 IndexNow only | **Technical** | `indexnow_checker.py` |
-| "Find content gaps" / "competitor analysis" | 📊 Gap analysis | None (LLM reasoning) | `competitor_gap.py` |
-| "Check for duplicates" / "thin content" | 📋 Dupe check | **Content** | `duplicate_content.py` |
-| "GSC data" / "Search Console" | 📈 GSC only | None | `gsc_checker.py` |
-| "GitHub SEO" / "optimize this repo" | 🐙 Repository | **GitHub Analyst** + **Benchmark** + **Data** + **Verifier** | `github_repo_audit.py`, `github_readme_lint.py`, `github_community_health.py`, `github_search_benchmark.py`, `github_competitor_research.py`, `github_traffic_archiver.py`, `github_seo_report.py`, `finding_verifier.py` (outputs `GITHUB-SEO-REPORT.md` + `GITHUB-ACTION-PLAN.md`) |
+| "Run SEO audit" | ðŸŒ Full domain | **All 6 core website agents** (technical, content, schema, performance, sitemap, visual) | `audit_runner.py`, `crawl_audit.py`, `parse_html.py`, `pagespeed.py`, `robots_checker.py`, `security_headers.py`, `broken_links.py`, `readability.py` |
+| "Analyze this article" / blog post URL | ðŸ“„ Single page | **Content** + **Schema** + **Technical** | `article_seo.py`, `parse_html.py`, `readability.py` |
+| "Check technical SEO" | ðŸ”§ Technical only | **Technical** | `robots_checker.py`, `security_headers.py`, `redirect_checker.py`, `parse_html.py` |
+| "Review content quality" / "E-E-A-T" | ðŸ“ Content only | **Content** | `article_seo.py`, `readability.py`, `entity_checker.py` |
+| "Check schema markup" | ðŸ·ï¸ Schema only | **Schema** | `parse_html.py`, `validate_schema.py` |
+| "Audit sitemap" | ðŸ—ºï¸ Sitemap only | **Sitemap** | `sitemap_checker.py`, `sitemap_generator.py` |
+| "Check page speed" / "Core Web Vitals" | âš¡ Performance only | **Performance** | `pagespeed.py` |
+| "Take screenshots" / "mobile check" | ðŸ“± Visual only | **Visual** | `capture_screenshot.py`, `analyze_visual.py` |
+| "Check GEO readiness" / "AI search" | ðŸ¤– GEO/AI only | **Technical** + **Content** | `llms_txt_checker.py`, `robots_checker.py`, `parse_html.py` |
+| "Analyze links" / "backlink profile" | ðŸ”— Links only | **Technical** | `link_profile.py`, `internal_links.py`, `broken_links.py` |
+| "Check hreflang" | ðŸŒ i18n only | **Technical** | `hreflang_checker.py` |
+| "Create SEO plan" / "SEO strategy" | ðŸ“‹ Strategy | None (LLM reasoning) | `competitor_gap.py` (optional) |
+| "AEO analysis" / "Featured Snippets" | ðŸŽ¯ AEO only | **Content** | `article_seo.py`, `parse_html.py` |
+| "Entity SEO" / "Knowledge Graph" | ðŸ›ï¸ Entity only | **Content** + **Schema** | `entity_checker.py`, `parse_html.py` |
+| "Check IndexNow" | ðŸ“¡ IndexNow only | **Technical** | `indexnow_checker.py` |
+| "Find content gaps" / "competitor analysis" | ðŸ“Š Gap analysis | None (LLM reasoning) | `competitor_gap.py` |
+| "Check for duplicates" / "thin content" | ðŸ“‹ Dupe check | **Content** | `duplicate_content.py` |
+| "GSC data" / "Search Console" | ðŸ“ˆ GSC only | None | `gsc_checker.py` |
+| "GitHub SEO" / "optimize this repo" | ðŸ™ Repository | **GitHub Analyst** + **Benchmark** + **Data** + **Verifier** | `github_repo_audit.py`, `github_readme_lint.py`, `github_community_health.py`, `github_search_benchmark.py`, `github_competitor_research.py`, `github_traffic_archiver.py`, `github_seo_report.py`, `finding_verifier.py` (outputs `GITHUB-SEO-REPORT.md` + `GITHUB-ACTION-PLAN.md`) |
 
-### Domain vs URL vs Blog Post — What's Different?
+### Domain vs URL vs Blog Post â€” What's Different?
 
 | Input type | What happens | Example |
 |-----------|-------------|---------|
@@ -337,13 +337,13 @@ Here's how specific phrases map to the skill's capabilities:
 
 ---
 
-### 🌐 Full Domain Audit
+### ðŸŒ Full Domain Audit
 
 ```text
 Run a full SEO audit for https://hackingdream.net and prioritize fixes by impact.
 ```
 
-### 📄 Single Page / Blog Post Analysis
+### ðŸ“„ Single Page / Blog Post Analysis
 
 ```text
 Analyze this article: https://www.hackingdream.net/2026/02/cobalt-strike-beacon-commands-red-team-field-guide.html
@@ -353,103 +353,103 @@ Analyze this article: https://www.hackingdream.net/2026/02/cobalt-strike-beacon-
 Do a single-page SEO analysis of https://hackingdream.net and show critical issues first.
 ```
 
-### 🔧 Technical SEO
+### ðŸ”§ Technical SEO
 
 ```text
 Analyze technical SEO for https://hackingdream.net (robots, crawlability, canonicals, redirects, headers).
 ```
 
-### 📝 Content Quality & E-E-A-T
+### ðŸ“ Content Quality & E-E-A-T
 
 ```text
 Review content quality and E-E-A-T signals on https://hackingdream.net and suggest concrete rewrites.
 ```
 
-### 🏷️ Schema Markup
+### ðŸ·ï¸ Schema Markup
 
 ```text
 Check schema markup on https://hackingdream.net, validate errors, and generate corrected JSON-LD.
 ```
 
-### ⚡ Performance & Core Web Vitals
+### âš¡ Performance & Core Web Vitals
 
 ```text
 Run Core Web Vitals analysis on https://hackingdream.net and break down LCP subparts.
 ```
 
-### 🤖 GEO / AI Search Readiness
+### ðŸ¤– GEO / AI Search Readiness
 
 ```text
 Evaluate GEO readiness for https://hackingdream.net (AI crawler access, llms.txt, citation structure).
 ```
 
-### 🎯 Answer Engine Optimization (AEO)
+### ðŸŽ¯ Answer Engine Optimization (AEO)
 
 ```text
-Analyze AEO signals for https://hackingdream.net — Featured Snippet targeting, PAA optimization, Knowledge Panel readiness.
+Analyze AEO signals for https://hackingdream.net â€” Featured Snippet targeting, PAA optimization, Knowledge Panel readiness.
 ```
 
-### 🔗 Link Profile Analysis
+### ðŸ”— Link Profile Analysis
 
 ```text
 Analyze internal link structure and backlink profile for https://hackingdream.net.
 ```
 
-### 🏛️ Entity SEO / Knowledge Graph
+### ðŸ›ï¸ Entity SEO / Knowledge Graph
 
 ```text
-Check entity SEO for https://hackingdream.net — Wikidata presence, sameAs links, Knowledge Graph signals.
+Check entity SEO for https://hackingdream.net â€” Wikidata presence, sameAs links, Knowledge Graph signals.
 ```
 
-### 📊 Competitor Topic Gap
+### ðŸ“Š Competitor Topic Gap
 
 ```text
 Find content gaps between https://hackingdream.net and competitors https://hackerone.com https://portswigger.net.
 ```
 
-### 🌍 Hreflang / International SEO
+### ðŸŒ Hreflang / International SEO
 
 ```text
-Validate hreflang implementation on https://hackingdream.net — BCP-47 tags, bidirectional links, x-default.
+Validate hreflang implementation on https://hackingdream.net â€” BCP-47 tags, bidirectional links, x-default.
 ```
 
-### 📡 IndexNow
+### ðŸ“¡ IndexNow
 
 ```text
 Check IndexNow implementation for https://hackingdream.net with key abc123def456.
 ```
 
-### 📋 Topical Cluster Planning
+### ðŸ“‹ Topical Cluster Planning
 
 ```text
 Create a topical authority cluster plan for https://hackingdream.net covering cybersecurity topics.
 ```
 
-### 📈 Google Search Console (requires credentials)
+### ðŸ“ˆ Google Search Console (requires credentials)
 
 ```text
 Pull GSC performance data for https://hackingdream.net and identify striking-distance keywords.
 ```
 
-### 🗺️ Sitemap Audit
+### ðŸ—ºï¸ Sitemap Audit
 
 ```text
 Audit sitemap quality for https://hackingdream.net and flag missing, redirected, or noindex URLs.
 ```
 
-### 🖼️ Image SEO
+### ðŸ–¼ï¸ Image SEO
 
 ```text
 Run image SEO checks for https://hackingdream.net (alt text, lazy loading, dimensions, format suggestions).
 ```
 
-### 📋 Strategic SEO Plan
+### ðŸ“‹ Strategic SEO Plan
 
 ```text
 Create a 6-month SEO strategy for https://hackingdream.net with milestones and KPIs.
 ```
 
-### 📱 Visual / Mobile Analysis
+### ðŸ“± Visual / Mobile Analysis
 
 ```text
 Take desktop and mobile screenshots of https://hackingdream.net and analyze above-the-fold content.
@@ -462,19 +462,19 @@ Take desktop and mobile screenshots of https://hackingdream.net and analyze abov
 To run **all** analysis types on a single URL:
 
 ```text
-Run a complete SEO audit on https://hackingdream.net — include technical, content, schema, performance,
+Run a complete SEO audit on https://hackingdream.net â€” include technical, content, schema, performance,
 links, GEO, AEO, entity SEO, and sitemap analysis. Provide a prioritized action plan.
 ```
 
 Example generated outputs:
-- `FULL-AUDIT-REPORT.md` — comprehensive findings
-- `ACTION-PLAN.md` — prioritized fixes
+- `FULL-AUDIT-REPORT.md` â€” comprehensive findings
+- `ACTION-PLAN.md` â€” prioritized fixes
 
 ![Example prompt and generated outputs](docs/images/example-prompt-output.png)
 
 ---
 
-## 📊 Report Generation
+## ðŸ“Š Report Generation
 
 You can generate reports in two ways:
 
@@ -503,7 +503,7 @@ Example generated dashboard:
 
 ---
 
-## ⚙️ Optional Script Workflow
+## âš™ï¸ Optional Script Workflow
 
 Use scripts when you need additional verification or structured JSON outputs.
 
@@ -520,8 +520,8 @@ $EDITOR .env   # add PAGESPEED_API_KEY, GITHUB_TOKEN, GSC_CREDENTIALS_PATH, etc.
 
 | Variable | Used by | How to get one |
 |---|---|---|
-| `PAGESPEED_API_KEY` | `pagespeed.py`, `generate_report.py` | [Google Cloud Console](https://console.cloud.google.com/) → enable "PageSpeed Insights API" |
-| `GOOGLE_KG_API_KEY` | `entity_checker.py` | Same console → enable "Knowledge Graph Search API" |
+| `PAGESPEED_API_KEY` | `pagespeed.py`, `generate_report.py` | [Google Cloud Console](https://console.cloud.google.com/) â†’ enable "PageSpeed Insights API" |
+| `GOOGLE_KG_API_KEY` | `entity_checker.py` | Same console â†’ enable "Knowledge Graph Search API" |
 | `GITHUB_TOKEN` *(or `GH_TOKEN`)* | All `github_*.py` scripts | A PAT with `public_repo` is enough; `gh auth login` works as a fallback |
 | `GSC_CREDENTIALS_PATH` | `gsc_checker.py`, `link_profile.py` | Path to a Google service-account JSON with Search Console access |
 
@@ -598,7 +598,7 @@ python3 scripts/generate_report.py "$URL"
 ```
 ---
 
-## 🛡️ Critical Rules Enforced
+## ðŸ›¡ï¸ Critical Rules Enforced
 
 | Rule | Detail |
 |------|--------|
@@ -608,11 +608,11 @@ python3 scripts/generate_report.py "$URL"
 | **JSON-LD only** | Never recommend Microdata or RDFa |
 | **E-E-A-T everywhere** | Applies to ALL competitive queries since Dec 2025 |
 | **Mobile-first complete** | 100% mobile-first indexing since July 2024 |
-| **Location page limits** | ⚠️ Warning at 30+ pages, 🛑 Hard stop at 50+ |
+| **Location page limits** | âš ï¸ Warning at 30+ pages, ðŸ›‘ Hard stop at 50+ |
 
 ---
 
-## 📋 Requirements
+## ðŸ“‹ Requirements
 
 | Requirement | Version |
 |-------------|---------|
@@ -623,7 +623,7 @@ python3 scripts/generate_report.py "$URL"
 
 ---
 
-## 🙏 Credits
+## ðŸ™ Credits
 
 This project was originally inspired by **[claude-seo](https://github.com/AgriciDaniel/claude-seo)** by **[AgriciDaniel](https://github.com/AgriciDaniel)**.
 
@@ -631,7 +631,7 @@ Agentic SEO Skill has since evolved into a broader, independently maintained ski
 
 ---
 
-## 📄 License
+## ðŸ“„ License
 
 Licensed under the MIT License. See [LICENSE](LICENSE).
 
