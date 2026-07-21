@@ -1,16 +1,27 @@
-# Agentic SEO Skill
+<div align="center">
 
-> **The Ultimate, 3-in-1 SEO Skill for AI Agents**
-> This repository merges three massive projects into one:
-> 1. **Native Markdown Skills**: 160+ native markdown skills for IDEs (Cursor/Claude).
-> 2. **Advanced Python Ecosystem**: 89 python scripts, 10 specialist agents, multi-IDE installers.
-> 3. **Interactive UI**: A glowing, OLED Glassmorphism landing page and dashboard.
+# 🤖 Agentic SEO Skill
+
+**[🇮🇷 فارسی (Persian)](README.fa.md) | [🇺🇸 English](README.md)**
+
+[![Release](https://img.shields.io/github/v/release/T4wroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/T4wroot/agentic-seo/releases)
+[![GitHub Pages](https://img.shields.io/github/actions/workflow/status/T4wroot/agentic-seo/deploy-pages.yml?branch=master&label=Live%20Site&style=for-the-badge&color=success)](https://T4wroot.github.io/agentic-seo)
+[![Python](https://img.shields.io/badge/Python-91%25-yellow?style=for-the-badge&logo=python)](https://github.com/T4wroot/agentic-seo)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+> **The Ultimate, 3-in-1 SEO Skill for AI Agents** 🚀
+</div>
+
+This repository merges three massive projects into one:
+1. 📝 **Native Markdown Skills**: 160+ native markdown skills for IDEs (Cursor/Claude).
+2. 🐍 **Advanced Python Ecosystem**: 89 python scripts, 10 specialist agents, multi-IDE installers.
+3. ✨ **Interactive UI**: A glowing, OLED Glassmorphism [Live Dashboard](https://T4wroot.github.io/agentic-seo).
 
 An LLM-first SEO analysis skill for agent IDEs and AI coding assistants, with 16 specialized sub-skills, 10 specialist agents, and 89 scripts used as evidence collectors and workflow automation.
 
-For detailed installation guidance, example prompts, report generation, troubleshooting, and the full script inventory, see the **[Agentic SEO Skill Wiki](https://github.com/Bhanunamikaze/Agentic-SEO-Skill/wiki)**.
+For detailed installation guidance, example prompts, report generation, troubleshooting, and the full script inventory, see the **[Agentic SEO Skill Wiki](https://github.com/T4wroot/agentic-seo/wiki)**.
 
-## IDE Compatibility
+## 💻 IDE Compatibility
 
 The installer ships native formats for each tool — not just a generic copy:
 
