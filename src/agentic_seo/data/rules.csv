@@ -1,0 +1,7 @@
+id,industry,rule,priority
+1,e-commerce,ساختار هدینگ‌ها: صفحه محصول باید فقط یک H1 (نام محصول) و H2ها برای مشخصات و نقدها داشته باشد.,high
+2,e-commerce,لینک‌سازی هوشمند: از صفحات دسته‌بندی به محصولات پرفروش لینک مستقیم با انکرتکست دقیق داده شود.,high
+3,blog,سلسله مراتب محتوا: تگ‌های H2 و H3 باید دارای کلمات کلیدی LSI باشند و ساختار درختی حفظ شود.,high
+4,blog,بهبود Core Web Vitals: تصاویر داخل مقالات باید با فرمت WebP و ویژگی loading="lazy" باشند.,high
+5,saas,صفحه اصلی باید دارای اسکیما Organization و SoftwareApplication باشد.,high
+6,all,بهینه‌سازی سرعت: LCP (Largest Contentful Paint) صفحات کلیدی نباید بیشتر از 2.5 ثانیه باشد.,critical

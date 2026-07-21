@@ -1,0 +1,17 @@
+# Agentic SEO
+
+> The ultimate 3-in-1 open-source skill for AI agents.
+
+Agentic SEO is a comprehensive SEO and Marketing tool built for autonomous AI agents (like Claude Code, Cursor, Antigravity, and Windsurf). 
+
+## Core Features
+1. **Python Automation Ecosystem**: 89 python scripts that perform technical SEO audits, schema validation, and Core Web Vitals checks.
+2. **Native Markdown Skills**: 160+ native markdown files providing deep marketing strategies, content generation guidelines, and paid ads rules.
+3. **Agent Integration**: Seamlessly integrates into any IDE via `.cursorrules` or `.clinerules`.
+
+## GEO & AI Search Readiness
+This project heavily emphasizes Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). It teaches agents how to format content for AI crawlers (like GPTBot, ClaudeBot, and PerplexityBot).
+
+- Repository: https://github.com/tawroot/agentic-seo
+- Owner: tawroot
+- License: MIT

@@ -1,0 +1,6 @@
+id,pattern,description,severity
+1,H1 Tag Duplication,استفاده از بیش از یک تگ H1 در یک صفحه که باعث سردرگمی موتور جستجو می‌شود.,high
+2,Canonical Loop,ارجاع تگ کنونیکال به صفحه‌ای که خودش به صفحه دیگری کنونیکال شده است.,critical
+3,Keyword Cannibalization,هدف‌گذاری دقیقاً یک کلمه کلیدی در چندین صفحه مختلف از سایت.,high
+4,Cumulative Layout Shift (CLS),تغییر چیدمان صفحه هنگام لود شدن به دلیل عدم تعیین ابعاد تصاویر (width/height).,critical
+5,Thin Content,صفحاتی با محتوای بسیار کم یا کپی که ارزش افزوده‌ای برای کاربر ندارند.,high

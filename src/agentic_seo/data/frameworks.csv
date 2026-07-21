@@ -1,0 +1,5 @@
+id,framework,principle,description
+1,Next.js,SSR & SSG Strategy,برای صفحاتی که مرتب آپدیت می‌شوند از SSR و برای صفحات ثابت (مثل بلاگ) از SSG استفاده شود.
+2,Next.js,next/image,همیشه از کامپوننت next/image برای بهینه‌سازی خودکار فرمت و سایز تصاویر استفاده شود.
+3,WordPress,Yoast/RankMath,پیکربندی صحیح متاتگ‌ها و اطمینان از عدم ایندکس شدن صفحات دسته‌بندی بی‌ارزش (Tag pages).
+4,Nuxt.js,nuxt-seo,استفاده از ماژول @nuxtjs/seo برای مدیریت یکپارچه متاتگ‌ها، نقشه سایت و اسکیما.

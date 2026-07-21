@@ -1,0 +1,58 @@
+{
+  "url": "https://example.com/",
+  "domain": "example.com",
+  "timestamp": "2026-05-15T10:30:00",
+  "environment": {
+    "primary": "Unknown",
+    "runtime": "Unknown",
+    "confidence": "low",
+    "signals": [],
+    "alternatives": []
+  },
+  "environment_fixes": [
+    {
+      "severity": "warning",
+      "title": "Meta description is missing or out of range",
+      "reason": "This can reduce SERP CTR and snippet quality.",
+      "fix": "Update page templates to set complete title/meta/OG/Twitter tags."
+    }
+  ],
+  "sections": {
+    "security": {
+      "score": 75,
+      "headers_present": {"Strict-Transport-Security": "max-age=31536000"},
+      "headers_missing": {"Content-Security-Policy": "Missing CSP"},
+      "issues": [
+        {
+          "severity": "high",
+          "area": "Security",
+          "finding": "Content-Security-Policy is missing",
+          "evidence": "Header not present",
+          "fix": "Set a scoped CSP at the CDN or server layer."
+        }
+      ]
+    },
+    "social": {"score": 80},
+    "robots": {"status": 200, "sitemaps": ["https://example.com/sitemap.xml"], "ai_crawler_status": {}},
+    "broken_links": {"summary": {"total": 10, "broken": 1}},
+    "internal_links": {"issues": []},
+    "redirects": {"issues": []},
+    "llms_txt": {"exists": false},
+    "pagespeed": {
+      "performance_score": 57,
+      "opportunities": [
+        {
+          "title": "Eliminate render-blocking resources",
+          "savings_ms": 340,
+          "description": "Inline critical CSS and defer non-critical CSS."
+        }
+      ]
+    },
+    "onpage": {"title": "Example page", "meta_description": "", "h1": ["Example"], "canonical": "https://example.com/"},
+    "readability": {"flesch_reading_ease": 62},
+    "entity": {"sameas_analysis": {"total_found": 1, "total_missing_critical": 3}, "wikidata": {"found": false}, "wikipedia": {"found": false}, "issues": []},
+    "link_profile": {"avg_internal_links_per_page": 4, "orphan_pages": {"count": 1}, "dead_end_pages": {"count": 0}},
+    "hreflang": {"hreflang_tags_found": 0},
+    "duplicate_content": {"near_duplicates": [], "thin_pages": []}
+  }
+}

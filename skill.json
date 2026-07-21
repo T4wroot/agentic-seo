@@ -1,0 +1,12 @@
+{
+  "name": "agentic-seo",
+  "version": "1.0.0",
+  "description": "Universal SEO knowledge base and reasoning engine for Autonomous AI agents.",
+  "author": "Antigravity",
+  "features": [
+    "rules",
+    "frameworks",
+    "anti_patterns"
+  ],
+  "cli_entry": "cli/index.js"
+}

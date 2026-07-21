@@ -1,0 +1,16 @@
+{
+  "name": "agentic-seo",
+  "version": "1.0.0",
+  "description": "CLI tool for Agentic SEO Universal AI Skill",
+  "main": "index.js",
+  "bin": {
+    "agentic-seo": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "commander": "^11.1.0"
+  },
+  "type": "module"
+}

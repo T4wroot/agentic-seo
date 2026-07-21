@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "overall": {
+    "method": "weighted_average",
+    "score_floor": 0,
+    "score_ceiling": 100,
+    "bands": [
+      {"min": 90, "grade": "A+", "label": "Excellent"},
+      {"min": 80, "grade": "A", "label": "Strong"},
+      {"min": 70, "grade": "B", "label": "Good"},
+      {"min": 60, "grade": "C", "label": "Needs work"},
+      {"min": 50, "grade": "D", "label": "At risk"},
+      {"min": 0, "grade": "F", "label": "Critical"}
+    ]
+  },
+  "categories": {
+    "security": {"weight": 8, "label": "Security Headers"},
+    "social": {"weight": 5, "label": "Social Meta"},
+    "robots": {"weight": 8, "label": "Robots and Crawlers"},
+    "broken_links": {"weight": 10, "label": "Broken Links"},
+    "internal_links": {"weight": 8, "label": "Internal Links"},
+    "redirects": {"weight": 3, "label": "Redirects"},
+    "llms_txt": {"weight": 5, "label": "AI Search"},
+    "pagespeed": {"weight": 13, "label": "Performance and Core Web Vitals"},
+    "onpage": {"weight": 10, "label": "On-Page SEO"},
+    "readability": {"weight": 8, "label": "Readability"},
+    "entity": {"weight": 5, "label": "Entity SEO"},
+    "link_profile": {"weight": 7, "label": "Link Profile"},
+    "hreflang": {"weight": 5, "label": "Hreflang"},
+    "duplicate_content": {"weight": 5, "label": "Content Uniqueness"}
+  }
+}

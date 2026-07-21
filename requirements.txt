@@ -1,0 +1,12 @@
+beautifulsoup4>=4.12
+lxml>=5.0
+requests>=2.31
+
+# Optional script families:
+# google-auth>=2.29
+# google-api-python-client>=2.125
+# playwright>=1.44
+
+# Development:
+# pytest>=8.0
+# ruff>=0.5

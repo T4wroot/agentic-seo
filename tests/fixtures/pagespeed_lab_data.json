@@ -1,0 +1,25 @@
+{
+  "lighthouseResult": {
+    "categories": {
+      "performance": {"score": 0.57}
+    },
+    "audits": {
+      "largest-contentful-paint": {"numericValue": 4300},
+      "interaction-to-next-paint": {"numericValue": 260},
+      "cumulative-layout-shift": {"numericValue": 0.12},
+      "first-contentful-paint": {"numericValue": 2200},
+      "server-response-time": {"numericValue": 720},
+      "render-blocking-resources": {
+        "title": "Eliminate render-blocking resources",
+        "score": 0.25,
+        "displayValue": "Potential savings of 340 ms",
+        "details": {"type": "opportunity", "overallSavingsMs": 340}
+      },
+      "total-byte-weight": {
+        "title": "Avoid enormous network payloads",
+        "score": 0.7,
+        "displayValue": "Total size was 2,400 KiB"
+      }
+    }
+  }
+}

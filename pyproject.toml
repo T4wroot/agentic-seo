@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-seo-skill"
+version = "3.0.1"
+description = "Deterministic SEO audit scripts and report generation for Agentic SEO workflows."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "beautifulsoup4>=4.12",
+  "lxml>=5.0",
+  "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+]
+gsc = [
+  "google-api-python-client>=2.125",
+  "google-auth>=2.29",
+]
+visual = [
+  "playwright>=1.44",
+]
+all = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+  "google-api-python-client>=2.125",
+  "google-auth>=2.29",
+  "playwright>=1.44",
+]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["scripts"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"

@@ -1,0 +1,2 @@
+# Agentic SEO Cursor Configuration
+Always prioritize SEO rules from `src/agentic_seo/data/rules.csv` when generating code. Avoid patterns in `anti_patterns.csv`.
