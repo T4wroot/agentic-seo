@@ -124,6 +124,29 @@ h1 { font-size: 5rem; margin-bottom: 1.5rem; line-height: 1.1; font-weight: 900;
 .terminal::before { content: " "; display: block; height: 12px; width: 12px; border-radius: 50%; background: #ff5f56; box-shadow: 24px 0 0 #ffbd2e, 48px 0 0 #27c93f; margin-bottom: 1.5rem; }
 .terminal code { color: #a8ff60; display: block; white-space: pre; font-size: 1rem; line-height: 1.8; }
 
+/* Social Share Bar */
+.social-share { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.social-btn { display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; border-radius: 50%; background: var(--glass-bg); border: 1px solid var(--glass-border); color: #fff; text-decoration: none; font-size: 1.2rem; transition: all 0.3s ease; backdrop-filter: var(--glass-blur); }
+.social-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.4); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+/* FAQ Accordion */
+.faq-section { padding: 4rem 5%; max-width: 800px; margin: 0 auto; }
+.faq-item { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; backdrop-filter: var(--glass-blur); transition: background 0.3s ease; }
+.faq-item:hover { background: rgba(255, 255, 255, 0.05); }
+.faq-item details { width: 100%; }
+.faq-item summary { padding: 1.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--text-primary); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 1.5rem; color: var(--accent-neon-blue); transition: transform 0.3s ease; }
+.faq-item details[open] summary::after { transform: rotate(45deg); color: #ff5f56; }
+.faq-answer { padding: 0 1.5rem 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.8; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 0.5rem; padding-top: 1rem; }
+
+/* Typing Effect for Hero Terminal */
+.hero-terminal { background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(0, 255, 255, 0.2); padding: 1.5rem; border-radius: 12px; font-family: 'Courier New', monospace; text-align: left; max-width: 650px; margin: 0 auto 2rem auto; box-shadow: 0 0 20px rgba(0, 255, 255, 0.1); }
+.fa-lang .hero-terminal { direction: ltr; }
+.typing-text { color: #0f0; border-right: 2px solid #0f0; white-space: nowrap; overflow: hidden; animation: typing 3s steps(40, end), blink-caret .75s step-end infinite; }
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #0f0; } }
+
 /* Footer */
 footer { text-align: center; padding: 3rem 5%; border-top: 1px solid var(--glass-border); color: var(--text-secondary); }
 footer a { color: var(--accent-neon-blue); text-decoration: none; font-weight: 600; }
@@ -134,6 +157,7 @@ footer a:hover { text-decoration: underline; }
   .fa-lang h1 { font-size: 2rem; }
   .hero p { font-size: 1.1rem; }
   .step { flex-direction: column; text-align: center; gap: 1rem; }
+  .typing-text { font-size: 0.8rem; white-space: normal; animation: none; border-right: none; }
 }
 
 .fade-in { opacity: 0; transform: translateY(30px); animation: fadeIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
