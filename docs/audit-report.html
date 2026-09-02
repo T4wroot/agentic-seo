@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Report — T4wroot.github.io</title>
+<style>
+:root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --card: #1e293b;
+    --card-border: #334155;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #6366f1;
+    --accent-glow: rgba(99, 102, 241, 0.3);
+    --green: #22c55e;
+    --yellow: #eab308;
+    --red: #ef4444;
+    --orange: #f97316;
+    --radius: 12px;
+}
+[data-theme="light"] {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --card: #ffffff;
+    --card-border: #e2e8f0;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --accent-glow: rgba(99, 102, 241, 0.15);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+    padding: 48px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, rgba(99,102,241,0.15) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+.header h1 { font-size: 2rem; font-weight: 700; color: white; position: relative; }
+.header .domain { font-size: 1.1rem; color: #a5b4fc; margin-top: 8px; position: relative; }
+.header .timestamp { font-size: 0.85rem; color: #818cf8; margin-top: 4px; position: relative; }
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    background: var(--surface); border: 1px solid var(--card-border);
+    border-radius: 50%; width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 1.2rem; transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.theme-toggle:hover { transform: scale(1.1); }
+
+/* Overall Score */
+.score-hero {
+    display: flex; justify-content: center; align-items: center;
+    gap: 48px; padding: 40px 0; flex-wrap: wrap;
+}
+.score-gauge { position: relative; width: 180px; height: 180px; }
+.score-gauge svg { width: 100%; height: 100%; }
+.score-gauge .gauge-value {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    text-align: center;
+}
+.score-gauge .gauge-number { font-size: 3rem; font-weight: 800; color: #ef4444; }
+.score-gauge .gauge-grade { font-size: 1rem; color: var(--text-muted); }
+.score-stats { display: flex; gap: 24px; }
+.stat-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 20px 28px; text-align: center;
+    min-width: 100px;
+}
+.stat-value { font-size: 2rem; font-weight: 700; }
+.stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+.stat-critical .stat-value { color: var(--red); }
+.stat-warning .stat-value { color: var(--yellow); }
+.stat-pass .stat-value { color: var(--green); }
+
+/* Category Cards Grid */
+.categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 32px 0; }
+.category-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 20px; text-align: center;
+    cursor: pointer; transition: all 0.3s;
+    position: relative;
+}
+.category-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px var(--accent-glow); border-color: var(--accent); }
+.category-card .ring { width: 70px; height: 70px; margin: 0 auto 8px; }
+.category-card .ring-label {
+    position: absolute; top: 52px; left: 50%; transform: translate(-50%, -50%);
+    font-size: 1.1rem; font-weight: 700;
+}
+.ring-progress { transition: stroke-dasharray 1s ease; }
+.category-icon { font-size: 1.3rem; margin: 4px 0; }
+.category-name { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+
+/* Sections */
+.section {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); margin: 24px 0; overflow: hidden;
+}
+.section-header {
+    padding: 20px 24px; cursor: pointer; display: flex;
+    align-items: center; justify-content: space-between;
+    transition: background 0.2s;
+}
+.section-header:hover { background: rgba(99,102,241,0.05); }
+.section-header h2 { font-size: 1.15rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.section-header .chevron { transition: transform 0.3s; font-size: 1.2rem; color: var(--text-muted); }
+.section-header .chevron.open { transform: rotate(180deg); }
+.section-body { padding: 0 24px 24px; display: none; }
+.section-body.open { display: block; animation: fadeIn 0.3s; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
+th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--card-border); color: var(--text-muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--card-border); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(99,102,241,0.03); }
+.mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.85rem; }
+.link-url { word-break: break-all; max-width: 400px; color: var(--accent); }
+
+/* Badges */
+.badge {
+    display: inline-block; padding: 2px 10px; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.badge.critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.badge.warning { background: rgba(234,179,8,0.15); color: var(--yellow); }
+.badge.pass { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge.info { background: rgba(99,102,241,0.15); color: var(--accent); }
+
+/* Issues */
+.issue-item {
+    padding: 12px 16px; border-radius: 8px; margin: 6px 0;
+    font-size: 0.9rem; display: flex; align-items: flex-start; gap: 10px;
+}
+.issue-item.critical { background: rgba(239,68,68,0.08); border-left: 3px solid var(--red); }
+.issue-item.warning { background: rgba(234,179,8,0.08); border-left: 3px solid var(--yellow); }
+.issue-item.info { background: rgba(99,102,241,0.08); border-left: 3px solid var(--accent); }
+.issue-badge { flex-shrink: 0; }
+
+/* Bar Chart */
+.bar-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+.bar-label { width: 150px; font-size: 0.85rem; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-muted); }
+.bar-track { flex: 1; height: 22px; background: var(--card-border); border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), #818cf8); border-radius: 4px; transition: width 1s ease; }
+.bar-value { width: 30px; font-size: 0.85rem; font-weight: 600; }
+
+/* Summary cards row */
+.summary-row { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+.summary-item {
+    flex: 1; min-width: 120px; background: var(--bg); border-radius: 8px;
+    padding: 16px; text-align: center;
+}
+.summary-item .val { font-size: 1.5rem; font-weight: 700; }
+.summary-item .lbl { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Footer */
+.footer { text-align: center; padding: 32px 0; color: var(--text-muted); font-size: 0.8rem; }
+
+@media (max-width: 768px) {
+    .score-hero { flex-direction: column; gap: 24px; }
+    .score-stats { flex-wrap: wrap; justify-content: center; }
+    .categories { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+    .container { padding: 16px; }
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌙</div>
+
+<div class="header">
+    <div class="container">
+        <h1>SEO Analysis Report</h1>
+        <div class="domain">T4wroot.github.io</div>
+        <div class="timestamp">Generated: September 02, 2026 at 11:58 PM</div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Overall Score -->
+    <div class="score-hero">
+        <div class="score-gauge">
+            <svg viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="85" fill="none" stroke="var(--card-border)" stroke-width="12"/>
+                <circle cx="100" cy="100" r="85" fill="none" stroke="#ef4444" stroke-width="12"
+                    stroke-dasharray="267.1 534.07" stroke-linecap="round"
+                    transform="rotate(-90 100 100)"/>
+            </svg>
+            <div class="gauge-value">
+                <div class="gauge-number">50</div>
+                <div class="gauge-grade">Grade: D</div>
+            </div>
+        </div>
+        <div class="score-stats">
+            <div class="stat-card stat-critical">
+                <div class="stat-value">5</div>
+                <div class="stat-label">Critical</div>
+            </div>
+            <div class="stat-card stat-warning">
+                <div class="stat-value">4</div>
+                <div class="stat-label">Warnings</div>
+            </div>
+            <div class="stat-card stat-pass">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Info</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Cards -->
+    <div class="categories">
+        
+        <div class="category-card" onclick="scrollToSection('security')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="113.1 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">45</div>
+            <div class="category-icon">🔒</div>
+            <div class="category-name">Security Headers</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('social')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="115.6 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">46</div>
+            <div class="category-icon">📱</div>
+            <div class="category-name">Social Meta</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('robots')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="50.3 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">20</div>
+            <div class="category-icon">🤖</div>
+            <div class="category-name">Robots & Crawlers</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('broken_links')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="0.0 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">0</div>
+            <div class="category-icon">🔗</div>
+            <div class="category-name">Broken Links</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('internal_links')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#22c55e" stroke-width="6"
+                    stroke-dasharray="201.1 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">80</div>
+            <div class="category-icon">🕸️</div>
+            <div class="category-name">Internal Links</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('redirects')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#22c55e" stroke-width="6"
+                    stroke-dasharray="251.3 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">100</div>
+            <div class="category-icon">↪️</div>
+            <div class="category-name">Redirects</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('llms_txt')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="0.0 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">0</div>
+            <div class="category-icon">🧠</div>
+            <div class="category-name">AI Search (llms.txt)</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('pagespeed')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="0.0 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">0</div>
+            <div class="category-icon">⚡</div>
+            <div class="category-name">Performance (CWV)</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('onpage')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#22c55e" stroke-width="6"
+                    stroke-dasharray="251.3 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">100</div>
+            <div class="category-icon">📝</div>
+            <div class="category-name">On-Page SEO</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('readability')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#eab308" stroke-width="6"
+                    stroke-dasharray="168.4 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">67</div>
+            <div class="category-icon">📖</div>
+            <div class="category-name">Readability</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('article')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#eab308" stroke-width="6"
+                    stroke-dasharray="188.5 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">75</div>
+            <div class="category-icon">📄</div>
+            <div class="category-name">Article Extractor</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('entity')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="0.0 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">0</div>
+            <div class="category-icon">🏛️</div>
+            <div class="category-name">Entity SEO</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('link_profile')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#eab308" stroke-width="6"
+                    stroke-dasharray="130.7 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">52</div>
+            <div class="category-icon">🔗</div>
+            <div class="category-name">Link Profile</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('hreflang')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="0.0 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">0</div>
+            <div class="category-icon">🌍</div>
+            <div class="category-name">Hreflang</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('duplicate_content')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#22c55e" stroke-width="6"
+                    stroke-dasharray="251.3 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">100</div>
+            <div class="category-icon">📋</div>
+            <div class="category-name">Content Uniqueness</div>
+        </div>
+    </div>
+
+    <!-- Environment Detection -->
+    <div class="section" id="section-environment">
+        <div class="section-header" onclick="toggleSection('environment')">
+            <h2>🧭 Environment Detection (LLM-Inferred)</h2>
+            <span class="chevron" id="chevron-environment">▼</span>
+        </div>
+        <div class="section-body" id="body-environment">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">Unknown</div><div class="lbl">Primary Platform</div></div>
+                <div class="summary-item"><div class="val">Unknown</div><div class="lbl">Runtime Type</div></div>
+                <div class="summary-item"><div class="val">LOW</div><div class="lbl">Confidence</div></div>
+                <div class="summary-item"><div class="val">1</div><div class="lbl">Matched Signals</div></div>
+            </div>
+            <h3 style="margin: 16px 0 8px; font-size: 0.95rem;">Detection Signals</h3>
+            <ul style="padding-left:20px;"><li class="mono" style="margin:4px 0;">No strong CMS/framework markers were found in HTML source.</li></ul>
+            
+        </div>
+    </div>
+
+    <!-- Environment-specific Fix Plan -->
+    <div class="section" id="section-env_fixes">
+        <div class="section-header" onclick="toggleSection('env_fixes')">
+            <h2>🛠️ Environment-Specific Fix Plan</h2>
+            <span class="chevron" id="chevron-env_fixes">▼</span>
+        </div>
+        <div class="section-body" id="body-env_fixes">
+            <div class="issue-item critical"><span class="issue-badge">CRITICAL</span><div><strong>5 security headers missing</strong><br><span style="color:var(--text-muted)">Missing headers reduce trust and can expose the site to browser/security risks.</span><br><span><strong>Fix:</strong> Set missing security headers at web server or CDN layer.</span></div></div><div class="issue-item warning"><span class="issue-badge">WARNING</span><div><strong>No llms.txt found</strong><br><span style="color:var(--text-muted)">AI crawlers and assistants have no curated machine-readable guidance for key pages.</span><br><span><strong>Fix:</strong> Add `/llms.txt` at site root with concise site description and key URLs.</span></div></div><div class="issue-item warning"><span class="issue-badge">WARNING</span><div><strong>3 broken links detected</strong><br><span style="color:var(--text-muted)">Broken internal links hurt crawl flow and user trust.</span><br><span><strong>Fix:</strong> Repair or remove broken internal links and refresh outdated navigation targets.</span></div></div><div class="issue-item warning"><span class="issue-badge">WARNING</span><div><strong>Social meta tags are incomplete</strong><br><span style="color:var(--text-muted)">Missing OG/Twitter tags weakens social previews and share quality.</span><br><span><strong>Fix:</strong> Update page templates to set complete title/meta/OG/Twitter tags.</span></div></div><div class="issue-item info"><span class="issue-badge">INFO</span><div><strong>Performance measurement incomplete</strong><br><span style="color:var(--text-muted)">PageSpeed API returned an error, so CWV recommendations are less reliable.</span><br><span><strong>Fix:</strong> Set `PAGESPEED_API_KEY` in your environment or `.env` file (see `.env.example`), then rerun. The CLI also accepts `--api-key`. Prioritize LCP/INP/CLS fixes from that output.</span></div></div>
+        </div>
+    </div>
+
+    <!-- Issues Summary -->
+    <div class="section" id="section-issues">
+        <div class="section-header" onclick="toggleSection('issues')">
+            <h2>🚨 All Issues (16)</h2>
+            <span class="chevron" id="chevron-issues">▼</span>
+        </div>
+        <div class="section-body" id="body-issues">
+            <div class="issue-item critical"><span class="issue-badge">CRITICAL</span> 🔴 No robots.txt found — all crawlers allowed by default</div>
+<div class="issue-item critical"><span class="issue-badge">CRITICAL</span> 🔴 5 security headers missing — poor security posture</div>
+<div class="issue-item critical"><span class="issue-badge">CRITICAL</span> 🔴 3 broken link(s) found</div>
+<div class="issue-item critical"><span class="issue-badge">CRITICAL</span> No Organization/Person entity found in JSON-LD. — Fix: Add Organization or Person schema with name, url, logo, and sameAs properties.</div>
+<div class="issue-item critical"><span class="issue-badge">CRITICAL</span> Average internal links per page is only 0.0 (target: 5-10). — Fix: Increase internal linking by adding contextual links within content.</div>
+<div class="issue-item warning"><span class="issue-badge">WARNING</span> ⚠️ HSTS missing includeSubDomains directive</div>
+<div class="issue-item warning"><span class="issue-badge">WARNING</span> ⚠️ Missing: twitter:card</div>
+<div class="issue-item warning"><span class="issue-badge">WARNING</span> ⚠️ 1 page(s) have fewer than 3 internal links</div>
+<div class="issue-item warning"><span class="issue-badge">WARNING</span> 1 page(s) with no outbound internal links (dead ends). — Fix: Add contextual internal links to related content from these pages.</div>
+<div class="issue-item info"><span class="issue-badge">INFO</span> No Wikidata entry found for 'Agentic SEO'. — Fix: If the entity meets Wikidata notability guidelines, create or improve an item with accurate third-party references. Do not create one solely for SEO.</div>
+<div class="issue-item info"><span class="issue-badge">INFO</span> No Wikipedia article found for 'Agentic SEO'. — Fix: Only pursue Wikipedia if the entity meets independent notability standards. Otherwise, strengthen official schema, sameAs profiles, citations, and About/Contact signals.</div>
+<div class="issue-item info"><span class="issue-badge">INFO</span> Missing sameAs link to Wikipedia (Primary KG signal). — Fix: Add the existing official 'wikipedia.org' URL to sameAs; do not create this profile solely for SEO.</div>
+<div class="issue-item info"><span class="issue-badge">INFO</span> Missing sameAs link to Wikidata (Primary KG signal). — Fix: Add the existing official 'wikidata.org' URL to sameAs; do not create this profile solely for SEO.</div>
+<div class="issue-item info"><span class="issue-badge">INFO</span> Missing sameAs link to LinkedIn (Strong KG signal). — Fix: Add 'linkedin.com' profile URL to sameAs array in your entity schema.</div>
+<div class="issue-item info"><span class="issue-badge">INFO</span> Missing sameAs link to Twitter/X (Strong KG signal). — Fix: Add 'x.com' profile URL to sameAs array in your entity schema.</div>
+<div class="issue-item info"><span class="issue-badge">INFO</span> ℹ️ Content readability is moderate (Flesch: 40.5) — suitable for educated audience</div>
+
+        </div>
+    </div>
+
+    <!-- Security Headers -->
+    <div class="section" id="section-security">
+        <div class="section-header" onclick="toggleSection('security')">
+            <h2>🔒 Security Headers <span class="badge critical">45/100</span></h2>
+            <span class="chevron" id="chevron-security">▼</span>
+        </div>
+        <div class="section-body" id="body-security">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">✅</div><div class="lbl">HTTPS</div></div>
+                <div class="summary-item"><div class="val">1</div><div class="lbl">Present</div></div>
+                <div class="summary-item"><div class="val">5</div><div class="lbl">Missing</div></div>
+            </div>
+            <table>
+                <thead><tr><th>Header</th><th>Status</th><th>Value / Description</th></tr></thead>
+                <tbody><tr><td>HSTS (Strict-Transport-Security)</td><td><span class="badge pass">Present</span></td><td class="mono">max-age=31556952</td></tr><tr><td>Content-Security-Policy (CSP)</td><td><span class="badge critical">Missing</span></td><td>Prevents XSS, clickjacking, and code injection.</td></tr><tr><td>X-Frame-Options</td><td><span class="badge critical">Missing</span></td><td>Prevents clickjacking by controlling iframe embedding.</td></tr><tr><td>X-Content-Type-Options</td><td><span class="badge critical">Missing</span></td><td>Prevents MIME-type sniffing.</td></tr><tr><td>Referrer-Policy</td><td><span class="badge critical">Missing</span></td><td>Controls how much referrer info is shared.</td></tr><tr><td>Permissions-Policy</td><td><span class="badge critical">Missing</span></td><td>Controls browser feature access (camera, microphone, geolocation).</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Social Meta -->
+    <div class="section" id="section-social">
+        <div class="section-header" onclick="toggleSection('social')">
+            <h2>📱 Social Meta Tags <span class="badge critical">46/100</span></h2>
+            <span class="chevron" id="chevron-social">▼</span>
+        </div>
+        <div class="section-body" id="body-social">
+            <table>
+                <thead><tr><th>Tag</th><th>Status</th><th>Value</th></tr></thead>
+                <tbody><tr><td>og:title</td><td><span class="badge pass">✅</span></td><td>Agentic SEO: The Ultimate AI SEO Skill for Agents</td></tr><tr><td>og:description</td><td><span class="badge pass">✅</span></td><td>Agentic SEO is the most powerful AI SEO Skill and AI Agent S</td></tr><tr><td>og:image</td><td><span class="badge pass">✅</span></td><td>https://T4wroot.github.io/agentic-seo/og-image.jpg</td></tr><tr><td>og:url</td><td><span class="badge pass">✅</span></td><td>https://T4wroot.github.io/agentic-seo/</td></tr><tr><td>og:type</td><td><span class="badge pass">✅</span></td><td>website</td></tr><tr><td>og:site_name</td><td><span class="badge pass">✅</span></td><td>Agentic SEO</td></tr><tr><td>twitter:card</td><td><span class="badge warning">Missing</span></td><td>—</td></tr><tr><td>twitter:title</td><td><span class="badge warning">Missing</span></td><td>—</td></tr><tr><td>twitter:description</td><td><span class="badge warning">Missing</span></td><td>—</td></tr><tr><td>twitter:image</td><td><span class="badge warning">Missing</span></td><td>—</td></tr><tr><td>twitter:site</td><td><span class="badge warning">Missing</span></td><td>—</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- AI Crawlers -->
+    <div class="section" id="section-robots">
+        <div class="section-header" onclick="toggleSection('robots')">
+            <h2>🤖 Robots & AI Crawlers <span class="badge critical">20/100</span></h2>
+            <span class="chevron" id="chevron-robots">▼</span>
+        </div>
+        <div class="section-body" id="body-robots">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">404</div><div class="lbl">robots.txt</div></div>
+                <div class="summary-item"><div class="val">0</div><div class="lbl">Sitemaps</div></div>
+                <div class="summary-item"><div class="val">0</div><div class="lbl">User-Agents</div></div>
+            </div>
+            <h3 style="margin: 16px 0 8px; font-size: 0.95rem;">AI Crawler Management</h3>
+            <table>
+                <thead><tr><th>Crawler</th><th>Status</th><th>Details</th></tr></thead>
+                <tbody><tr><td>GPTBot</td><td><span class="badge info">Info</span></td><td>allowed (no robots.txt)</td></tr><tr><td>ChatGPT-User</td><td><span class="badge info">Info</span></td><td>allowed (no robots.txt)</td></tr><tr><td>ClaudeBot</td><td><span class="badge info">Info</span></td><td>allowed (no robots.txt)</td></tr><tr><td>PerplexityBot</td><td><span class="badge info">Info</span></td><td>allowed (no robots.txt)</td></tr><tr><td>Google-Extended</td><td><span class="badge info">Info</span></td><td>allowed (no robots.txt)</td></tr><tr><td>Applebot-Extended</td><td><span class="badge info">Info</span></td><td>allowed (no robots.txt)</td></tr><tr><td>Bytespider</td><td><span class="badge info">Info</span></td><td>allowed (no robots.txt)</td></tr><tr><td>CCBot</td><td><span class="badge info">Info</span></td><td>allowed (no robots.txt)</td></tr><tr><td>anthropic-ai</td><td><span class="badge info">Info</span></td><td>allowed (no robots.txt)</td></tr><tr><td>FacebookBot</td><td><span class="badge info">Info</span></td><td>allowed (no robots.txt)</td></tr><tr><td>Amazonbot</td><td><span class="badge info">Info</span></td><td>allowed (no robots.txt)</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Broken Links -->
+    <div class="section" id="section-broken_links">
+        <div class="section-header" onclick="toggleSection('broken_links')">
+            <h2>🔗 Broken Links <span class="badge critical">3 broken / 7 total</span></h2>
+            <span class="chevron" id="chevron-broken_links">▼</span>
+        </div>
+        <div class="section-body" id="body-broken_links">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val" style="color:var(--green)">3</div><div class="lbl">Healthy</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">3</div><div class="lbl">Broken</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--yellow)">1</div><div class="lbl">Redirected</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--orange)">0</div><div class="lbl">Timeout</div></div>
+            </div>
+            <table><thead><tr><th>Type</th><th>Status</th><th>URL</th><th>Anchor</th></tr></thead><tbody><tr><td><span class="badge critical">Internal</span></td><td class="mono">404</td><td class="link-url">https://T4wroot.github.io/fa.html</td><td>فارسی 🇮🇷</td></tr><tr><td><span class="badge warning">External</span></td><td class="mono">403</td><td class="link-url">https://twitter.com/intent/tweet?text=Check%20out%20Agentic%20SEO%20-%20The%20Ul</td><td>𝕏</td></tr><tr><td><span class="badge warning">External</span></td><td class="mono">403</td><td class="link-url">https://reddit.com/submit?url=https://github.com/T4wroot/agentic-seo&title=Agent</td><td>🤖</td></tr></tbody></table>
+        </div>
+    </div>
+
+    <!-- Internal Links -->
+    <div class="section" id="section-internal_links">
+        <div class="section-header" onclick="toggleSection('internal_links')">
+            <h2>🕸️ Internal Link Structure <span class="badge pass">80/100</span></h2>
+            <span class="chevron" id="chevron-internal_links">▼</span>
+        </div>
+        <div class="section-body" id="body-internal_links">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">1</div><div class="lbl">Pages Crawled</div></div>
+                <div class="summary-item"><div class="val">0</div><div class="lbl">Internal Links</div></div>
+                <div class="summary-item"><div class="val">0.0</div><div class="lbl">Avg Links/Page</div></div>
+                <div class="summary-item"><div class="val">0</div><div class="lbl">Orphan Pages</div></div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- Redirects -->
+    <div class="section" id="section-redirects">
+        <div class="section-header" onclick="toggleSection('redirects')">
+            <h2>↪️ Redirect Chain <span class="badge pass">1 hops</span></h2>
+            <span class="chevron" id="chevron-redirects">▼</span>
+        </div>
+        <div class="section-body" id="body-redirects">
+            <table><thead><tr><th>#</th><th>Status</th><th>URL</th><th>Time</th><th>Type</th></tr></thead><tbody><tr><td>1</td><td><span class="badge warning">301</span></td><td class="link-url">https://T4wroot.github.io/agentic-seo</td><td>4696ms</td><td>permanent (301)</td></tr><tr><td>2</td><td><span class="badge pass">200</span></td><td class="link-url">https://t4wroot.github.io/agentic-seo/</td><td>1177ms</td><td>FINAL</td></tr></tbody></table>
+        </div>
+    </div>
+
+    <!-- llms.txt -->
+    <div class="section" id="section-llms_txt">
+        <div class="section-header" onclick="toggleSection('llms_txt')">
+            <h2>🧠 AI Search Readiness (llms.txt) <span class="badge critical">Not Found</span></h2>
+            <span class="chevron" id="chevron-llms_txt">▼</span>
+        </div>
+        <div class="section-body" id="body-llms_txt">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">❌</div><div class="lbl">llms.txt</div></div>
+                <div class="summary-item"><div class="val">❌</div><div class="lbl">llms-full.txt</div></div>
+                <div class="summary-item"><div class="val">0</div><div class="lbl">Quality Score</div></div>
+            </div>
+            <div class="issue-item warning"><span class="issue-badge">TIP</span> Create /llms.txt with site name, description, and key page links</div>
+        </div>
+    </div>
+
+    <!-- PageSpeed / Core Web Vitals -->
+    <div class="section" id="section-pagespeed">
+        <div class="section-header" onclick="toggleSection('pagespeed')">
+            <h2>⚡ Performance & Core Web Vitals <span class="badge critical">0/100</span></h2>
+            <span class="chevron" id="chevron-pagespeed">▼</span>
+        </div>
+        <div class="section-body" id="body-pagespeed">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">None</div><div class="lbl">Performance</div></div>
+                <div class="summary-item"><div class="val">?</div><div class="lbl">LCP</div></div>
+                <div class="summary-item"><div class="val">?</div><div class="lbl">INP/TBT</div></div>
+                <div class="summary-item"><div class="val">?</div><div class="lbl">CLS</div></div>
+            </div>
+            <div class="issue-item warning"><span class="issue-badge">NOTE</span> <div><strong>PageSpeed API returned an error or was rate-limited.</strong><br><span style="color:var(--text-muted)">Set <code>PAGESPEED_API_KEY</code> in a <code>.env</code> file (see <code>.env.example</code>) or export it in your shell, then rerun. The CLI also accepts <code>--api-key</code>. The LLM can still analyze Core Web Vitals by reading the page directly.</span></div></div>
+            
+        </div>
+    </div>
+
+    <!-- On-Page SEO -->
+    <div class="section" id="section-onpage">
+        <div class="section-header" onclick="toggleSection('onpage')">
+            <h2>📝 On-Page SEO <span class="badge pass">100/100</span></h2>
+            <span class="chevron" id="chevron-onpage">▼</span>
+        </div>
+        <div class="section-body" id="body-onpage">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">✅</div><div class="lbl">Title Tag</div></div>
+                <div class="summary-item"><div class="val">✅</div><div class="lbl">Meta Desc</div></div>
+                <div class="summary-item"><div class="val">✅</div><div class="lbl">H1</div></div>
+                <div class="summary-item"><div class="val">✅</div><div class="lbl">Canonical</div></div>
+            </div>
+            <table>
+                <thead><tr><th>Element</th><th>Value</th><th>Length</th></tr></thead>
+                <tbody>
+                    <tr><td>Title</td><td>Agentic SEO: The Ultimate AI SEO Skill for Agents</td><td>49</td></tr>
+                    <tr><td>Meta Description</td><td>Agentic SEO is the most powerful AI SEO Skill and AI Agent Skill to evolve large language models int</td><td>124</td></tr>
+                    <tr><td>H1</td><td>Evolving AI Agentsinto SEO Executives.</td><td>—</td></tr>
+                    <tr><td>Canonical</td><td class="link-url">https://T4wroot.github.io/agentic-seo/</td><td>—</td></tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+
+    <!-- Readability -->
+    <div class="section" id="section-readability">
+        <div class="section-header" onclick="toggleSection('readability')">
+            <h2>📖 Readability <span class="badge warning">67/100</span></h2>
+            <span class="chevron" id="chevron-readability">▼</span>
+        </div>
+        <div class="section-body" id="body-readability">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">40.5</div><div class="lbl">Flesch Score</div></div>
+                <div class="summary-item"><div class="val">12.0</div><div class="lbl">Grade Level</div></div>
+                <div class="summary-item"><div class="val">457</div><div class="lbl">Words</div></div>
+                <div class="summary-item"><div class="val">2.3 min</div><div class="lbl">Read Time</div></div>
+            </div>
+            <div style="margin-top:16px"><h3 style="font-size:0.95rem;margin-bottom:8px;">💡 Recommendations</h3><div class="issue-item info"><span class="issue-badge">FIX</span> Rewrite the flagged long sentences below using the suggested replacements.</div><div class="issue-item info"><span class="issue-badge">FIX</span> ℹ️ Content readability is moderate (Flesch: 40.5) — suitable for educated audience</div></div>
+            <div style="margin-top:16px"><h3 style="font-size:0.95rem;margin-bottom:8px;">✍️ What To Replace (Before/After)</h3><div class="issue-item warning"><span class="issue-badge">SENTENCE (40w)</span><div><div><strong>Current:</strong> Analyze https://example.com/blog/seo-guide with the seo-article and seo-content sub-skills: Check readability score, E-E-A-T adherence, heading hierarchy, keyword cannibalization risk, and generate ready-to-use Article and FAQPage JSON-LD schema.</div><div style="margin-top:6px;"><strong>Replace with:</strong> Analyze https://example.com/blog/seo-guide with the seo-article and seo-content sub-skills: Check readability score, E-E-A-T. Adherence, heading hierarchy, keyword cannibalization risk, and generate ready-to-use Article and FAQPage JSON-LD schema..</div></div></div></div>
+        </div>
+    </div>
+
+    <!-- Article SEO Extractor -->
+    <div class="section" id="section-article">
+        <div class="section-header" onclick="toggleSection('article')">
+            <h2>📄 Article Info & Keywords <span class="badge warning">75/100</span></h2>
+            <span class="chevron" id="chevron-article">▼</span>
+        </div>
+        <div class="section-body" id="body-article">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">?</div><div class="lbl">Words</div></div>
+                <div class="summary-item"><div class="val">4</div><div class="lbl">H2 Headings</div></div>
+                <div class="summary-item"><div class="val">0</div><div class="lbl">Images</div></div>
+            </div>
+            <h3 style="margin: 16px 0 8px; font-size: 0.95rem;">Extracted Keywords</h3>
+            <table>
+                <thead><tr><th>Target Keyword</th><th>LSI / Related Keywords</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 600; color: var(--accent);">https example com</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+
+    <!-- Entity SEO -->
+    <div class="section" id="section-entity">
+        <div class="section-header" onclick="toggleSection('entity')">
+            <h2>🏛️ Entity SEO <span class="badge critical">0/100</span></h2>
+            <span class="chevron" id="chevron-entity">▼</span>
+        </div>
+        <div class="section-body" id="body-entity">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">❌</div><div class="lbl">Wikidata</div></div>
+                <div class="summary-item"><div class="val">❌</div><div class="lbl">Wikipedia</div></div>
+                <div class="summary-item"><div class="val">0</div><div class="lbl">sameAs Links</div></div>
+                <div class="summary-item"><div class="val">7</div><div class="lbl">Issues</div></div>
+            </div>
+            <div style="margin-top:16px"><h3 style="font-size:0.95rem;margin-bottom:8px;">🔍 Issues Found</h3><div class="issue-item critical"><span class="issue-badge">CRITICAL</span><div><strong>No Organization/Person entity found in JSON-LD.</strong><br><span style=&quot;color:var(--text-muted)&quot;>Fix: Add Organization or Person schema with name, url, logo, and sameAs properties.</span></div></div><div class="issue-item info"><span class="issue-badge">INFO</span><div><strong>No Wikidata entry found for &#x27;Agentic SEO&#x27;.</strong><br><span style=&quot;color:var(--text-muted)&quot;>Fix: If the entity meets Wikidata notability guidelines, create or improve an item with accurate third-party references. Do not create one solely for SEO.</span></div></div><div class="issue-item info"><span class="issue-badge">INFO</span><div><strong>No Wikipedia article found for &#x27;Agentic SEO&#x27;.</strong><br><span style=&quot;color:var(--text-muted)&quot;>Fix: Only pursue Wikipedia if the entity meets independent notability standards. Otherwise, strengthen official schema, sameAs profiles, citations, and About/Contact signals.</span></div></div><div class="issue-item info"><span class="issue-badge">INFO</span><div><strong>Missing sameAs link to Wikipedia (Primary KG signal).</strong><br><span style=&quot;color:var(--text-muted)&quot;>Fix: Add the existing official &#x27;wikipedia.org&#x27; URL to sameAs; do not create this profile solely for SEO.</span></div></div><div class="issue-item info"><span class="issue-badge">INFO</span><div><strong>Missing sameAs link to Wikidata (Primary KG signal).</strong><br><span style=&quot;color:var(--text-muted)&quot;>Fix: Add the existing official &#x27;wikidata.org&#x27; URL to sameAs; do not create this profile solely for SEO.</span></div></div><div class="issue-item info"><span class="issue-badge">INFO</span><div><strong>Missing sameAs link to LinkedIn (Strong KG signal).</strong><br><span style=&quot;color:var(--text-muted)&quot;>Fix: Add &#x27;linkedin.com&#x27; profile URL to sameAs array in your entity schema.</span></div></div><div class="issue-item info"><span class="issue-badge">INFO</span><div><strong>Missing sameAs link to Twitter/X (Strong KG signal).</strong><br><span style=&quot;color:var(--text-muted)&quot;>Fix: Add &#x27;x.com&#x27; profile URL to sameAs array in your entity schema.</span></div></div></div>
+        </div>
+    </div>
+
+    <!-- Link Profile -->
+    <div class="section" id="section-link_profile">
+        <div class="section-header" onclick="toggleSection('link_profile')">
+            <h2>🔗 Link Profile <span class="badge warning">52/100</span></h2>
+            <span class="chevron" id="chevron-link_profile">▼</span>
+        </div>
+        <div class="section-body" id="body-link_profile">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">1</div><div class="lbl">Pages Crawled</div></div>
+                <div class="summary-item"><div class="val">0.0</div><div class="lbl">Avg Links/Page</div></div>
+                <div class="summary-item"><div class="val">0</div><div class="lbl">Orphan Pages</div></div>
+                <div class="summary-item"><div class="val">1</div><div class="lbl">Dead Ends</div></div>
+            </div>
+            <div style="margin-top:16px"><h3 style="font-size:0.95rem;margin-bottom:8px;">🔍 Issues Found</h3><div class="issue-item warning"><span class="issue-badge">MEDIUM</span><div><strong>1 page(s) with no outbound internal links (dead ends).</strong><br><span style=&quot;color:var(--text-muted)&quot;>Fix: Add contextual internal links to related content from these pages.</span></div></div><div class="issue-item critical"><span class="issue-badge">HIGH</span><div><strong>Average internal links per page is only 0.0 (target: 5-10).</strong><br><span style=&quot;color:var(--text-muted)&quot;>Fix: Increase internal linking by adding contextual links within content.</span></div></div></div>
+        </div>
+    </div>
+
+    <!-- Hreflang -->
+    <div class="section" id="section-hreflang">
+        <div class="section-header" onclick="toggleSection('hreflang')">
+            <h2>🌍 Hreflang / International SEO <span class="badge info">0 tags</span></h2>
+            <span class="chevron" id="chevron-hreflang">▼</span>
+        </div>
+        <div class="section-body" id="body-hreflang">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">none</div><div class="lbl">Method</div></div>
+                <div class="summary-item"><div class="val">0</div><div class="lbl">Tags Found</div></div>
+            </div>
+            <p style="color:var(--text-muted);margin-top:12px">No hreflang tags found — this is expected for single-language sites.</p>
+        </div>
+    </div>
+
+    <!-- Duplicate Content -->
+    <div class="section" id="section-duplicate_content">
+        <div class="section-header" onclick="toggleSection('duplicate_content')">
+            <h2>📋 Content Uniqueness <span class="badge pass">0 dupes / 0 thin</span></h2>
+            <span class="chevron" id="chevron-duplicate_content">▼</span>
+        </div>
+        <div class="section-body" id="body-duplicate_content">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">3</div><div class="lbl">Pages Analyzed</div></div>
+                <div class="summary-item"><div class="val">0</div><div class="lbl">Near Duplicates</div></div>
+                <div class="summary-item"><div class="val">0</div><div class="lbl">Thin Pages</div></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Recommendations Summary -->
+    <div class="section" id="section-recs">
+        <div class="section-header" onclick="toggleSection('recs')">
+            <h2>💡 All Recommendations</h2>
+            <span class="chevron" id="chevron-recs">▼</span>
+        </div>
+        <div class="section-body" id="body-recs">
+            <h3 style="font-size:0.95rem;margin:16px 0 8px;">🛠️ Environment-Specific Fixes</h3><div class="issue-item info"><span class="issue-badge">FIX</span> <strong>5 security headers missing</strong>: Set missing security headers at web server or CDN layer.</div><div class="issue-item info"><span class="issue-badge">FIX</span> <strong>No llms.txt found</strong>: Add `/llms.txt` at site root with concise site description and key URLs.</div><div class="issue-item info"><span class="issue-badge">FIX</span> <strong>3 broken links detected</strong>: Repair or remove broken internal links and refresh outdated navigation targets.</div><div class="issue-item info"><span class="issue-badge">FIX</span> <strong>Social meta tags are incomplete</strong>: Update page templates to set complete title/meta/OG/Twitter tags.</div><div class="issue-item info"><span class="issue-badge">FIX</span> <strong>Performance measurement incomplete</strong>: Set `PAGESPEED_API_KEY` in your environment or `.env` file (see `.env.example`), then rerun. The CLI also accepts `--api-key`. Prioritize LCP/INP/CLS fixes from that output.</div><h3 style="font-size:0.95rem;margin:16px 0 8px;">🔒 Security</h3><div class="issue-item info"><span class="issue-badge">FIX</span> Content-Security-Policy (CSP): Add a Content-Security-Policy header restricting script/style sources.</div><div class="issue-item info"><span class="issue-badge">FIX</span> X-Frame-Options: Add header: X-Frame-Options: SAMEORIGIN</div><div class="issue-item info"><span class="issue-badge">FIX</span> X-Content-Type-Options: Add header: X-Content-Type-Options: nosniff</div><div class="issue-item info"><span class="issue-badge">FIX</span> Referrer-Policy: Add header: Referrer-Policy: strict-origin-when-cross-origin</div><div class="issue-item info"><span class="issue-badge">FIX</span> Permissions-Policy: Add header: Permissions-Policy: camera=(), microphone=(), geolocation=()</div><h3 style="font-size:0.95rem;margin:16px 0 8px;">📱 Social Meta</h3><div class="issue-item info"><span class="issue-badge">FIX</span> Add Twitter Card tags for rich previews on X (Twitter)</div><div class="issue-item info"><span class="issue-badge">FIX</span> Add og:image:width and og:image:height for optimal rendering (1200×630 recommended)</div><h3 style="font-size:0.95rem;margin:16px 0 8px;">🕸️ Internal Links</h3><div class="issue-item info"><span class="issue-badge">FIX</span> Increase internal linking — aim for 3-5 relevant links per 1000 words</div><h3 style="font-size:0.95rem;margin:16px 0 8px;">📖 Readability</h3><div class="issue-item info"><span class="issue-badge">FIX</span> Rewrite the flagged long sentences below using the suggested replacements.</div><div class="issue-item info"><span class="issue-badge">FIX</span> ℹ️ Content readability is moderate (Flesch: 40.5) — suitable for educated audience</div><div class="issue-item info"><span class="issue-badge">FIX</span> Rewrite: Analyze https://example.com/blog/seo-guide with the seo-article and seo-content sub-skills: Check readability score, E-E-A-T adherence, heading hierarchy, keyword cannibalization r → Analyze https://example.com/blog/seo-guide with the seo-article and seo-content sub-skills: Check readability score, E-E-A-T. Adherence, heading hierarchy, keyword cannibalization </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>Generated by SEO Skill · 2026-09-02 23:58</p>
+</div>
+
+<script>
+function toggleSection(id) {
+    const body = document.getElementById('body-' + id);
+    const chevron = document.getElementById('chevron-' + id);
+    body.classList.toggle('open');
+    chevron.classList.toggle('open');
+}
+function scrollToSection(id) {
+    const el = document.getElementById('section-' + id);
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Auto-open
+        const body = document.getElementById('body-' + id);
+        const chevron = document.getElementById('chevron-' + id);
+        if (!body.classList.contains('open')) {
+            body.classList.add('open');
+            chevron.classList.add('open');
+        }
+    }
+}
+function toggleTheme() {
+    const html = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (html.getAttribute('data-theme') === 'light') {
+        html.removeAttribute('data-theme');
+        btn.textContent = '🌙';
+    } else {
+        html.setAttribute('data-theme', 'light');
+        btn.textContent = '☀️';
+    }
+}
+// Auto-open issues section
+document.getElementById('body-issues').classList.add('open');
+document.getElementById('chevron-issues').classList.add('open');
+</script>
+
+</body>
+</html>

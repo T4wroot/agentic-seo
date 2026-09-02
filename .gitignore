@@ -41,8 +41,8 @@ ChatExport_*/
 .DS_Store
 Thumbs.db
 
-# Local Audit Run Outputs
-audit-results.json
-audit-report.html
-FULL-AUDIT-REPORT.md
-ACTION-PLAN.md
+# Root temp audit outputs (docs/audit-report.html is preserved for GitHub Pages)
+/audit-results.json
+/audit-report.html
+/FULL-AUDIT-REPORT.md
+/ACTION-PLAN.md
