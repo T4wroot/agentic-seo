@@ -40,3 +40,9 @@ ChatExport_*/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local Audit Run Outputs
+audit-results.json
+audit-report.html
+FULL-AUDIT-REPORT.md
+ACTION-PLAN.md

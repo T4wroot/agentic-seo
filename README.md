@@ -290,11 +290,75 @@ The skill will auto-trigger when you mention SEO-related keywords in your IDE. T
 - *"Create an SEO plan for my SaaS product"*
 - *"Run GitHub SEO analysis for owner/repo"*
 
+## 🎯 Copy & Paste Ready Prompts
+
+Trigger full audits or specific sub-skills in your AI IDE (Antigravity, Cursor, Claude Code, Windsurf) using these copy-paste prompts:
+
+### 🌟 1. The 360° Master Audit (Any Website)
+> *Audits corporate, ecommerce, blog, or SaaS websites from end to end:*
+```text
+Run a comprehensive 360-degree SEO audit on https://example.com.
+Audit the following areas:
+1. Technical SEO: robots.txt, sitemaps, redirects, security headers, broken links, and indexability
+2. Performance & Core Web Vitals: LCP, CLS, and page speed diagnostics
+3. Content Quality & E-E-A-T: Readability, heading hierarchy (H1-H6), and content depth
+4. Schema & Structured Data: Validate and generate optimized JSON-LD schema (Schema.org)
+5. Images & Links: Missing alt tags, Next-Gen image formats, internal link structure
+6. AI Search & GEO/AEO: llms.txt validation, AI crawler directives (GPTBot/ClaudeBot), and direct answer optimization
+
+Generate the interactive visual dashboard in audit-report.html, the complete FULL-AUDIT-REPORT.md, and the prioritized ACTION-PLAN.md.
+```
+
+### 🛒 2. E-Commerce & Online Stores
+```text
+Analyze this product/category page https://myshop.com/product/shoes for e-commerce SEO:
+- Extract and validate Product, AggregateOffer, and Review JSON-LD schema.
+- Audit product image alt text, lazy loading, and layout shift (CLS).
+- Evaluate metadata CTR appeal and provide optimized Product schema markup.
+```
+
+### 📰 3. Blog Posts & Content (E-E-A-T & Rankings)
+```text
+Analyze https://example.com/blog/seo-guide using the seo-article and seo-content sub-skills:
+- Calculate readability score, keyword density, and evaluate against Google's E-E-A-T quality rubric.
+- Check heading structure, LSI keyword coverage, and keyword cannibalization risks.
+- Output ready-to-use Article and FAQPage JSON-LD schema markup.
+```
+
+### 🏢 4. Corporate & Local Business SEO
+```text
+Audit https://mycompany.com for corporate and local business search visibility:
+- Generate complete Organization and LocalBusiness JSON-LD schema with opening hours, geo coordinates, and contact details.
+- Evaluate trust signals (About, Contact, Privacy Policy, Terms).
+- Optimize internal link anchor text distribution for core service pages.
+```
+
+### 🤖 5. Generative Engine Optimization (GEO & AI Search)
+```text
+Audit https://example.com for Generative Engine Optimization (GEO):
+- Check AI bot permissions (GPTBot, ClaudeBot, PerplexityBot) in robots.txt.
+- Generate a standard llms.txt file summarizing the site for LLMs.
+- Optimize key content blocks to rank as primary sources in ChatGPT Search, Perplexity, and Google AI Overviews.
+```
+
+### ⚡ 6. Image Optimization & Core Web Vitals
+```text
+Audit images on https://example.com with the seo-images sub-skill:
+- List all images missing descriptive alt text.
+- Identify unoptimized images lacking WebP/AVIF formats or explicit dimensions that cause CLS.
+- Provide optimized <img> and <picture> HTML snippets.
+```
+
+### 🐙 7. GitHub Repository SEO
+```text
+Audit repository https://github.com/owner/repo for GitHub SEO:
+- Benchmark topics, repository title, and description against top competitors.
+- Output GITHUB-SEO-REPORT.md and prioritized GITHUB-ACTION-PLAN.md to increase discovery on GitHub and Google.
+```
+
 ---
 
-## 💬 Example Prompts (hackingdream.net)
-
-For expanded copy-paste prompt templates across full audits, technical SEO, schema, content, GEO/AEO, local SEO, ecommerce, and GitHub SEO, see the [Example Prompts wiki](https://github.com/T4wroot/agentic-seo/wiki/Example-Prompts).
+## 💬 Example Prompts & Agent Routing
 
 ### How Prompts Route to Agents & Scripts
 
