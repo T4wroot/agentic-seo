@@ -13,8 +13,8 @@
 </div>
 
 This repository merges three massive projects into one:
-1. ðŸ“ **Native Markdown Skills**: 160+ native markdown skills for IDEs (Cursor/Claude).
-2. ðŸ **Advanced Python Ecosystem**: 89 python scripts, 10 specialist agents, multi-IDE installers.
+1. ðŸ“  **Native Markdown Skills**: 160+ native markdown skills for IDEs (Cursor/Claude).
+2. ðŸ   **Advanced Python Ecosystem**: 88 Python scripts, 10 specialist agents, multi-IDE installers.
 3. âœ¨ **Interactive UI**: A glowing, OLED Glassmorphism [Live Dashboard](https://T4wroot.github.io/agentic-seo).
 
 An LLM-first SEO analysis skill for agent IDEs and AI coding assistants, with 16 specialized sub-skills, 10 specialist agents, and 89 scripts used as evidence collectors and workflow automation.

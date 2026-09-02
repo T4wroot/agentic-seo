@@ -7,73 +7,99 @@
 [![Release](https://img.shields.io/github/v/release/T4wroot/agentic-seo?style=for-the-badge&color=blue)](https://github.com/T4wroot/agentic-seo/releases)
 [![GitHub Pages](https://img.shields.io/github/actions/workflow/status/T4wroot/agentic-seo/deploy-pages.yml?branch=master&label=Live%20Site&style=for-the-badge&color=success)](https://T4wroot.github.io/agentic-seo)
 [![Python](https://img.shields.io/badge/Python-91%25-yellow?style=for-the-badge&logo=python)](https://github.com/T4wroot/agentic-seo)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-> **قدرتمندترین و کامل‌ترین پکیج ۳-در-۱ سئو برای ایجنت‌های هوش مصنوعی** 🚀
+> **جامع‌ترین پکیج ۳-در-۱ سئو و بهینه‌سازی موتورهای جستجوی هوش مصنوعی (GEO & AEO) ویژه دستیاران و ایجنت‌های کدنویسی** 🚀
 </div>
 
-این مخزن (Repository) حاصل ادغام سه پروژه عظیم است و به عنوان یک استاندارد جهانی برای آموزش سئو به ایجنت‌های هوش مصنوعی طراحی شده است:
+این مخزن حاصل ادغام سه پروژه کاربردی و قدرتمند است که به عنوان یک استاندارد نوین برای مجهز کردن ایجنت‌های هوش مصنوعی (AI Agents) به دانش عمیق سئو طراحی شده است:
 
-۱. 📝 **مهارت‌های مارک‌داون (Markdown Skills):** بیش از ۱۶۰ فایل مهارت (اسکیل) مارکتینگ و سئو برای محیط‌های توسعه هوش مصنوعی (مانند Cursor و Claude).
-۲. 🐍 **اکوسیستم پیشرفته پایتون:** شامل ۸۹ اسکریپت تخصصی پایتون، ۱۰ ایجنت متخصص (Specialist Agents) و نصب‌کننده‌های چندپلتفرمی.
-۳. ✨ **رابط کاربری تعاملی (Interactive UI):** یک لندینگ پیج و داشبورد فوق‌حرفه‌ای با طراحی Glassmorphism (برای مشاهده کلیک کنید: [سایت زنده](https://T4wroot.github.io/agentic-seo)).
-
----
-
-## 🌟 قابلیت‌های کلیدی
-
-- **موتور استدلال جامع:** اسکریپت‌های سبک پایتون که به عنوان منبع حقیقت (Source of Truth) برای استخراج مدارک و استدلال‌های سئو عمل می‌کنند.
-- **تیم ۱۰ نفره ایجنت‌ها:** شامل ایجنت بررسی محتوا، ایجنت تحلیل فنی، ایجنت اسکیما (Schema)، ایجنت بررسی سئوی گیت‌هاب و...
-- **ضد الگوها (Anti-Patterns):** لیستی از اشتباهات مرگبار سئو که ایجنت‌ها تحت هر شرایطی باید از آن‌ها دوری کنند (مثل حلقه‌های کنونیکال، مشکل CLS و آدم‌خواری کلمات کلیدی).
-- **قوانین تخصصی:** بهترین شیوه‌ها برای سئوی محلی (Local SEO)، فروشگاهی (E-commerce) و برنامه‌نویسی (Programmatic SEO).
+1. 📝 **مهارت‌های مارک‌داون (Markdown Skills):** بیش از ۱۶۰ مهارت بومی مارکتینگ، سئو و بازاریابی محتوا برای IDEها.
+2. 🐍 **اکوسیستم پیشرفته پایتون:** شامل ۸۹ اسکریپت تحلیلی (۸۸ اسکریپت پایتون + ۱ اسکریپت شل)، ۱۰ ایجنت متخصص (Specialist Agents) و نصب‌کننده‌های اختصاصی برای تمام محیط‌های توسعه.
+3. ✨ **داشبورد تعاملی (Interactive UI):** داشبورد شیشه‌ای مدرن (Glassmorphism) برای مشاهده زنده آمار و قابلیت‌ها ([مشاهده سایت زنده](https://T4wroot.github.io/agentic-seo)).
 
 ---
 
-## 💻 سازگاری با محیط‌های توسعه (IDE)
+## 🌟 قابلیت‌های برجسته
 
-این ابزار با تمام ایجنت‌ها و دستیارهای برنامه‌نویسی هوشمند سازگار است:
-- **Cursor** (قوانین خودکار `.cursorrules` و MDC)
-- **Windsurf** (پشتیبانی کامل از `.windsurf/rules`)
-- **Claude Code** (یکپارچگی مستقیم با مهارت‌های کلود)
-- **Antigravity IDE**
-- **Cline**
-- **GitHub Copilot**
+- 🎯 **استدلال مبتنی بر داده (Evidence-Based):** اسکریپت‌های پایتون مستقیماً دیتای واقعی سئو (وضعیت ایندکس، اسکیما، Core Web Vitals، ربات‌ها، ریدایرکت‌ها) را استخراج کرده و به صورت JSON و گزارش Markdown در اختیار مدل قرار می‌دهند.
+- 👥 **تیم ۱۰ ایجنت تخصصی:** ایجنت‌های مجزا برای تحلیل فنی (Technical SEO)، ارزیابی محتوا و E-E-A-T، ساختار اسکیما (Schema.org)، سئوی ریپازیتوری‌های گیت‌هاب (GitHub SEO) و بهینه‌سازی برای جستجوی هوش مصنوعی (GEO/AEO).
+- 🚫 **پیشگیری از ضد الگوها (Anti-Patterns):** جلوگیری خودکار از اشتباهات متداول مانند حلقه‌های کنونیکال، جهش‌های لایه‌بندی (CLS) و تداخل کلمات کلیدی (Keyword Cannibalization).
+- 🔍 **بهینه‌سازی برای موتورهای جستجوی نسل جدید (GEO & AEO):** بهینه‌سازی محتوا برای دیده‌شدن در Google AI Overviews، ChatGPT Search و Perplexity.
 
 ---
 
-## 📦 محتویات بسته (Inventory)
+## 💻 سازگاری بومی با انواع محیط‌های توسعه (IDEs)
 
-- **۱۶** مهارت فرعی تخصصی (Sub-skills)
-- **۱۰** ایجنت متخصص (Specialist Agents)
-- **۸۹** اسکریپت پایتون در پوشه `scripts/` برای اتوماسیون کامل بررسی‌های سئو.
+این پکیج به صورت خودکار با فرمت استاندارد و بومی هر ادیتور نصب و پیکربندی می‌شود:
+
+| ابزار / IDE | مسیر نصب | فرمت بومی |
+|---|---|---|
+| **Antigravity IDE** | `<project>/.agent/skills/seo` | Skill Directory |
+| **Cursor** | `.cursor/rules/seo.mdc` + `.cursor/skills/seo/` | MDC Rule + Skills |
+| **Claude Code** | `~/.claude/skills/seo` | Skill Directory |
+| **Windsurf** | `.windsurf/rules/seo.md` + `.windsurf/skills/seo/` | Windsurf Rule |
+| **Codex CLI** | `~/.codex/skills/seo` | Skill Directory |
+| **Claude Cowork** | `<project>/.claude/skills/seo` | Project-scoped Skill |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | Repo Instructions |
+| **Continue.dev** | `.continue/prompts/seo.prompt` | Slash Command |
+| **Cline** | `.clinerules` | Project Rules |
 
 ---
 
-## 🚀 روش نصب
+## 📦 فهرست دارایی‌ها و ابزارها (Inventory)
 
-شما می‌توانید با یک دستور ساده در ترمینال خود (سیستم‌های لینوکس و مک)، این پکیج عظیم را برای ایجنت خود نصب کنید:
+- **۱۶ مهارت فرعی تخصصی (Sub-Skills):**
+  - `seo audit`: آدیت جامع ۳۶۰ درجه وب‌سایت همراه با امتیازدهی و پلن اقدام.
+  - `seo technical`: بررسی خزش (Crawlability)، ایندکس‌پذیری، ربات‌های هوش مصنوعی و امنیت.
+  - `seo content`: ارزیابی کیفیت محتوا طبق آخرین استانداردهای گوگل و E-E-A-T.
+  - `seo schema`: اعتبارسنجی و تولید کدهای ساختاریافته JSON-LD (Schema.org).
+  - `seo geo`: بهینه‌سازی برای موتورهای جستجوی هوش مصنوعی (Generative Engine Optimization).
+  - `seo github`: تحلیل سئو، کلمات کلیدی، رقبا و ساختار مخازن گیت‌هاب.
+  - و ۱۰ زیرمهارت تخصصی دیگر برای تصاویر، سایت‌مپ، مقالات، لینک‌سازی، مهاجرت سایت و سئوی محلی.
+- **۱۰ ایجنت متخصص (Specialist Agents)**
+- **۸۹ اسکریپت تحلیلی** در پوشه `scripts/` برای جمع‌آوری شواهد و ایجاد گزارش‌های بدون خطا.
+
+---
+
+## 🚀 روش نصب سریع (در کمتر از ۱ دقیقه)
+
+### لینوکس و مک (Linux & macOS)
 ```bash
-# نصب پیش‌فرض برای تمام محیط‌های توسعه
+# نصب پیش‌فرض
 curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --online
+
+# یا نصب اختصاصی برای پروژه جاری در یک IDE خاص (مثلا Antigravity یا Cursor):
+curl -fsSL https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.sh | bash -s -- --target antigravity
 ```
 
-کاربران **ویندوز** نیز می‌توانند به راحتی از PowerShell استفاده کنند:
+### ویندوز (Windows PowerShell)
 ```powershell
 irm https://raw.githubusercontent.com/T4wroot/agentic-seo/main/install.ps1 -OutFile install.ps1
 powershell -ExecutionPolicy Bypass -File .\install.ps1 --online
 ```
 
-> **نکته:** نصب‌کننده هوشمند ما به صورت خودکار تشخیص می‌دهد که شما از چه ادیتوری استفاده می‌کنید و فایل‌ها را در جای درست قرار می‌دهد.
+---
+
+## 💡 نمونه پرامپت‌ها و نحوه استفاده
+
+پس از نصب، کافیست در چت ادیتور هوش مصنوعی خود (Antigravity، Cursor، Claude و...) به زبان فارسی یا انگلیسی دستور دهید:
+
+* **آدیت کامل وب‌سایت:**
+  > "سایت https://example.com را به صورت کامل تحلیل و آدیت کن و اکشن‌پلن رفع خطاها را بده."
+* **بررسی سئوی مخزن گیت‌هاب:**
+  > "ریپازیتوری https://github.com/username/repo را از نظر سئو، کلمات کلیدی و کامیونیتی بررسی کن."
+* **بررسی Core Web Vitals و سرعت:**
+  > "امتیاز PageSpeed و فاکتورهای حیاتی این صفحه را با اسکریپت pagespeed.py استخراج کن."
+* **تولید و اعتبارسنجی اسکیما:**
+  > "برای این مقاله یک اسکیمای JSON-LD از نوع Article و FAQPage تولید کن و اعتبارسنجی کن."
 
 ---
 
-## 💡 نمونه پرامپت‌ها (دستورات)
+## 🤝 مشارکت در پروژه (Contributing)
 
-کافیست در ادیتور هوش مصنوعی خود (مثلاً کِرسِر)، یکی از دستورات زیر را تایپ کنید:
-- "یک آدیت (SEO Audit) کامل روی سایت `example.com` اجرا کن."
-- "مشکلات فنی سئوی این آدرس را پیدا کن و گزارش بده."
-- "اسکیمای (Schema Markup) این صفحه وبلاگ را بررسی کن."
-- "برای من یک پلن استراتژیک ۶ ماهه سئو بنویس."
-- "سئوی این ریپازیتوری گیت‌هاب را بررسی کن."
+ما از تمامی مشارکت‌ها (افزودن مهارت‌های جدید، بهبود اسکریپت‌ها، ترجمه و رفع باگ‌ها) استقبال می‌کنیم! لطفاً راهنمای [CONTRIBUTING.md](CONTRIBUTING.md) را مطالعه کنید.
 
-هوش مصنوعی شما به لطف فایل‌های مخفی این پکیج (SKILL.md و اسکریپت‌ها) بلافاصله وارد عمل شده و مانند یک کارشناس سئوی سنیور (Senior SEO Expert) کارهای شما را انجام می‌دهد!
+## 📄 لایسنس
+
+این پروژه تحت لایسنس [MIT](LICENSE) منتشر شده است و استفاده شخصی و تجاری از آن کاملاً آزاد و رایگان است.

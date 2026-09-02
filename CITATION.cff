@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this software in your research or project, please cite it as below."
+authors:
+  - name: "T4wroot"
+title: "Agentic SEO: LLM-First SEO Skill for AI Coding Assistants"
+version: 1.0.0
+date-released: 2026-07-21
+url: "https://github.com/T4wroot/agentic-seo"
